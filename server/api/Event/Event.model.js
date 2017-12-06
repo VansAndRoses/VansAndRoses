@@ -15,11 +15,11 @@ const eventSchema = new Schema({
       ref: 'Trip'
     },
   startDate: Date,
+}, {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   }
-
 });
 const Event = mongoose.model("Event", eventSchema);
 module.exports = Event;

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const TYPES = require('./Trip-types');
+const TYPES = require('../Trip-types');
 
 const tripSchema = new Schema({
   title: {
@@ -18,6 +18,7 @@ const tripSchema = new Schema({
     ref: 'User'
   },
   duration: Number,
+  location: String,
   locationOfStart: {
     latitude: Number,
     longitude: Number,
@@ -31,7 +32,7 @@ const tripSchema = new Schema({
     animals: Boolean,
     kids: Boolean
   },
-  photo: String,
+  pic_path: String,
 }, {
   timestamps: {
     createdAt: 'created_at',

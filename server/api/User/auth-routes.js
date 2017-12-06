@@ -3,12 +3,12 @@ const passport = require('passport');
 const path = require('path');
 const User = require('./User.model');
 const bcrypt = require('bcrypt');
-const debug = require('debug')("angularauth:"+path.basename(__filename).split('.')[0]);
 const authRoutes = express.Router();
+const debug = require('debug')("angularauth:"+path.basename(__filename).split('.')[0]);
 
 
 /* GET home page. */
-authRoutes.post('/signup', (req, res, next) => {
+exports.signUp = function(req, res, next) {
   const {username, password} = req.body;
 
   if (!username || !password)
@@ -35,15 +35,16 @@ authRoutes.post('/signup', (req, res, next) => {
 
         res.status(200).json(req.user);
       });
-    })
+    });
   })
   .catch(e => {
     console.log(e);
-    res.status(400).json({ message: 'Something went wrong' })
+    res.status(400).json({ message: 'Something went wrong' });
   });
-});
+};
 
-authRoutes.post('/login', (req, res, next) => {
+exports.logIn = function(req, res, next) {
+  console.log("entrando");
   passport.authenticate('local', (err, user, failureDetails) => {
     if (err)
       return res.status(500).json({ message: 'Something went wrong' });
@@ -59,18 +60,15 @@ authRoutes.post('/login', (req, res, next) => {
       res.status(200).json(req.user);
     });
   })(req, res, next);
-});
+};
 
-authRoutes.get('/logout', (req, res, next) => {
+exports.logOut = function(req, res, next) {
   req.logout();
   res.status(200).json({ message: 'Success' });
-});
+};
 
-authRoutes.get('/loggedin', (req, res, next) => {
+exports.loggedIn = function (req,res,next){
   if (req.isAuthenticated())
     return res.status(200).json(req.user);
   res.status(403).json({ message: 'Unauthorized' });
-});
-
-
-module.exports = authRoutes;
+};

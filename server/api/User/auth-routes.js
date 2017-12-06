@@ -1,11 +1,11 @@
 const express = require('express');
 const passport = require('passport');
 const path = require('path');
-const User = require('../models/User');
+const User = require('./User.model');
 const bcrypt = require('bcrypt');
 const debug = require('debug')("angularauth:"+path.basename(__filename).split('.')[0]);
+const authRoutes = express.Router();
 
-var authRoutes = express.Router();
 
 /* GET home page. */
 authRoutes.post('/signup', (req, res, next) => {

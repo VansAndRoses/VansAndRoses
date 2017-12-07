@@ -9,17 +9,28 @@ import { ReviewService } from './services/review.service'
 import { UserService } from './services/user.service'
 import { MessageService } from './services/message.service';
 import { HomeTripsComponent } from './home-trips/home-trips.component';
-import { HomeTripsIdComponent } from './home-trips-id/home-trips-id.component'
+import { HomeTripsIdComponent } from './home-trips-id/home-trips-id.component';
+import { EventComponent } from './event/event.component';
+import { UserMyMessagesComponent } from './user-my-messages/user-my-messages.component';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { routes } from './routes';
+import { RouterModule } from "@angular/router";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeTripsComponent,
-    HomeTripsIdComponent
+    HomeTripsIdComponent,
+    EventComponent,
+    UserMyMessagesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [ItinerationService, TripService, AuthService, EventService, ReviewService, UserService, MessageService],
   bootstrap: [AppComponent]

@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { EventService } from './services/event.service'
 import { ReviewService } from './services/review.service'
 import { UserService } from './services/user.service'
-import { MessageService } from './services/message.service'
+import { MessageService } from './services/message.service';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component'
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule

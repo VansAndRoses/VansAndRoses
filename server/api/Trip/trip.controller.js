@@ -4,17 +4,60 @@ const tripModel = require('./Trip.model');
 exports.getAllList = function (req,res,next){
   tripModel.find()
   .then( tripList => {res.status(200).res.json(tripList);})
-  .reject(err => { res.status(500).json(err)});
+  .reject(err => { res.status(500).json(err);});
 };
 
-exports.paramsTrip = function(req,res, next){
-  tripModel.find({location: req.params.location, category: req.params.category})
-  .then( tripList => {res.status(200).res.json(tripList);})
-  .reject(err => { res.status(500).json(err)});
-};
 
 exports.singleTrip = function(req,res,next){
-  tripModel.findById(req.params.id)
+  tripModel.findById(req.params.id).populate("itinerations")
   .then(singleTrip => {res.status(200).res.json(singleTrip);})
-  .reject(err => { res.status(500).json(err)});
+  .reject(err => { res.status(500).json(err);});
+};
+
+
+exports.createTrip = function(req, res, next) {
+  const newTrip = new tripModel({
+    title: req.body.title,
+    itinerations: req.body.itinerations,
+    description: req.body.description,
+    category: req.body.category,
+    duration: req.body.duration,
+    location: req.body.location,
+    locationOfStart: req.body.locationOfStart,
+    locationOfEnd: req.body.locationOfEnd,
+    options: req.body.options,
+    pic_path: req.body.pic_path,
+  });
+
+	newTrip.save()
+      .then( trip => {res.json({ message: 'New trip created!', id: newTrip._id });})
+      .catch( err => {res.status(500).json({error:err, message:"Cannot create trip"}); });
+};
+
+
+exports.editTrip = function(req, res ,next) {
+  const updates = {
+    title: req.body.title,
+    itinerations: req.body.itinerations,
+    description: req.body.description,
+    category: req.body.category,
+    duration: req.body.duration,
+    location: req.body.location,
+    locationOfStart: req.body.locationOfStart,
+    locationOfEnd: req.body.locationOfEnd,
+    options: req.body.options,
+    pic_path: req.body.pic_path,
+  };
+  tripModel.findByIdAndUpdate(req.params.id, updates, (err) => {
+    if (err) {
+      return res.status(400).json({ message: "Unable to update Trip", error});
+    }
+    res.status(500).res.json({ message: 'Trip updated successfully'});
+  });
+};
+
+exports.removeTrip = function (req, res) {
+    tripModel.findByIdAndRemove(req.params.id)
+      .then((list) => res.status(202).json({ message: 'Trip removed successfully' }))
+      .catch(err => res.status(500).json({ message: 'impossible to remove the Trip', error: err }));
 };

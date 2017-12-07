@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { ItinerationService } from './services/itineration.service';
+import { TripService } from './services/trip.service';
+import { AuthService } from './services/auth-user.service';
 import { AppComponent } from './app.component';
 import { EventService } from './services/event.service'
 import { ReviewService } from './services/review.service'
@@ -20,7 +21,7 @@ import { HomeTripsIdComponent } from './home-trips-id/home-trips-id.component'
   imports: [
     BrowserModule
   ],
-  providers: [EventService, ReviewService, UserService, MessageService],
+  providers: [ItinerationService, TripService, AuthService, EventService, ReviewService, UserService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

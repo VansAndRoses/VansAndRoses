@@ -8,7 +8,6 @@ exports.getAllList = function (req,res,next){
   .reject(err => { res.status(500).json(err);});
 };
 
-
 exports.singleEvent = function(req,res,next){
   eventModel.findById(req.params.id)
   .then(singleEvent => {res.status(200).json(singleEvent);})

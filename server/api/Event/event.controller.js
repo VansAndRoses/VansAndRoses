@@ -44,7 +44,7 @@ exports.editEvent = function(req, res ,next) {
   });
 };
 
-removeEvent = function (req, res) {
+exports.removeEvent = function (req, res) {
     eventModel.findByIdAndRemove(req.params.id)
       .then((list) => res.status(202).json({ message: 'event removed successfully' }))
       .catch(err => res.status(500).json({ message: 'impossible to remove the event', error: err }));

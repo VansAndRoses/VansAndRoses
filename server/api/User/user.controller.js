@@ -1,5 +1,5 @@
 const userModel = require('./User.model');
-const tripModel = require('../Trip.model');
+const tripModel = require('../Trip/Trip.model');
 
 
 exports.profileGet = function(req, res, next){

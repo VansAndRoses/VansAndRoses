@@ -8,11 +8,6 @@ exports.getAllList = function (req,res,next){
   .reject(err => { res.status(500).json(err);});
 };
 
-exports.listEvents = function(req,res, next){
-  eventModel.find({location: req.params.location})
-  .then( eventList => {res.status(200).json(eventList);})
-  .reject(err => { res.status(500).json(err);});
-};
 
 exports.singleEvent = function(req,res,next){
   eventModel.findById(req.params.id)
@@ -50,7 +45,7 @@ exports.editEvent = function(req, res ,next) {
   });
 };
 
-removeEvent = function (req, res) {
+exports.removeEvent = function (req, res) {
     eventModel.findByIdAndRemove(req.params.id)
       .then((list) => res.status(202).json({ message: 'event removed successfully' }))
       .catch(err => res.status(500).json({ message: 'impossible to remove the event', error: err }));

@@ -8,6 +8,8 @@ import { EventService } from './services/event.service'
 import { ReviewService } from './services/review.service'
 import { UserService } from './services/user.service'
 import { MessageService } from './services/message.service';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component'
 import { HomeTripsComponent } from './home-trips/home-trips.component';
 import { HomeTripsIdComponent } from './home-trips-id/home-trips-id.component';
 import { EventComponent } from './event/event.component';
@@ -16,6 +18,9 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { routes } from './routes';
 import { RouterModule } from "@angular/router";
+import { UserMyprofileComponent } from './user-myprofile/user-myprofile.component';
+import { UserIdComponent } from './user-id/user-id.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 
 @NgModule({
@@ -24,7 +29,12 @@ import { RouterModule } from "@angular/router";
     HomeTripsComponent,
     HomeTripsIdComponent,
     EventComponent,
-    UserMyMessagesComponent
+    UserMyMessagesComponent,
+    LoginComponent,
+    SignupComponent,
+    UserMyprofileComponent,
+    UserIdComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

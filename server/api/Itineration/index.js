@@ -4,10 +4,11 @@ const upload = require('../../config/multer');
 
 var router = express.Router();
 
-router.get('/itineration', controller.getAllItineration);
-router.post('/new-tineration', upload.single('file'),  controller.createItineration);
+router.get('/', controller.getAllItineration);
+router.post('/new-itineration', upload.single('file'),  controller.createItineration);
 router.put('/single/:id/edit', upload.single('file'), controller.editItineration);
-router.delete('/single/:id/edit', controller.removeItineration);
+router.get('/single/:id', controller.singleItineration);
+router.delete('/single/:id/delete', controller.removeItineration);
 
 
 module.exports = router;

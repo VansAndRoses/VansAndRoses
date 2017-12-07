@@ -8,6 +8,12 @@ exports.getAllItineration = function (req,res,next){
   .reject(err => { res.status(500).json(err)});
 };
 
+exports.singleItineration = function(req,res,next){
+  itinerationModel.findById(req.params.id)
+  .then(singleItineration => {res.status(200).res.json(singleItineration);})
+  .reject(err => { res.status(500).json(err)});
+};
+
 // POST
 exports.createItineration = function(req, res, next) {
   const newItineration = new itinerationModel({
@@ -22,7 +28,7 @@ exports.createItineration = function(req, res, next) {
     photo:           req.body.photo,
   });
 
-  console.log("Itineration created")
+  console.log("Itineration created");
 	newItineration.save()
       .then( Itineration => {res.status(200).res.json({ message: 'New Itineration created!', id: newPlate._id });})
       .catch( err => {res.status(500).json({error:err, message:"Cannot create Itineration"}); });

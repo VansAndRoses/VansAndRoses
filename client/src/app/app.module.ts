@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { EventService } from './services/event.service'
 import { ReviewService } from './services/review.service'
 import { UserService } from './services/user.service'
-import { MessageService } from './services/message.service'
+import { MessageService } from './services/message.service';
+import { HomeTripsComponent } from './home-trips/home-trips.component';
+import { HomeTripsIdComponent } from './home-trips-id/home-trips-id.component'
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeTripsComponent,
+    HomeTripsIdComponent
   ],
   imports: [
     BrowserModule

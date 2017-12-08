@@ -9,8 +9,7 @@ import { UserMyprofileComponent } from './user-myprofile/user-myprofile.componen
 import { UserEditComponent } from './user-edit/user-edit.component';
 
 export const routes: Routes = [
-  //{ path: '', component: HomeComponent},
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'user/myprofile', component: UserMyprofileComponent,
       children: [
@@ -18,11 +17,7 @@ export const routes: Routes = [
         { path: 'user-my-message/:id', component: UserMyMessagesComponent}
        ]
    },
-  { path: 'home-trips', component: HomeTripsComponent,
-      children:[
-        { path: ':id', component: HomeTripsIdComponent}
-      ]
-    },
+  { path: 'home-trips', component: HomeTripsComponent},
   { path: 'event', component: EventComponent },
   { path: '**', redirectTo: '' }
 ];

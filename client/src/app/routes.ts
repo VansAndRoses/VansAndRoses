@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'user/myprofile', component: UserMyprofileComponent,
       children: [
-        { path: 'edit', component: UserEditComponent },
+        { path: '/:id/edit', component: UserEditComponent },
         { path: 'user-my-message/:id', component: UserMyMessagesComponent}
        ]
    },

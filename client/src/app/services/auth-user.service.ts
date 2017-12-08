@@ -9,7 +9,7 @@ const  BASE_URL ="http//localhost:3000"
 @Injectable()
 export class AuthService {
 
-  private user:object;
+  public user:object;
   private userLoginEvent:EventEmitter<any> = new EventEmitter<any>();
   private options = {withCredentials:true};
 
@@ -48,6 +48,11 @@ export class AuthService {
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);
+    }
+
+    edit(id,user) {
+      return this.http.put(`${BASE_URL}/${id}/edit`,user, this.options)
+       .map((res) => res.json());
     }
 
     logout() {

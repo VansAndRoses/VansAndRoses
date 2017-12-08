@@ -16,6 +16,8 @@ exports.singleTrip = function(req,res,next){
 
 
 exports.createTrip = function(req, res, next) {
+  console.log("esto vale lo que recibo en mi back");
+  console.log(req.body);
   const newTrip = new tripModel({
     title: req.body.title,
     itinerations: req.body.itinerations,
@@ -30,7 +32,7 @@ exports.createTrip = function(req, res, next) {
   });
 
 	newTrip.save()
-      .then( trip => {res.json({ message: 'New trip created!', id: newTrip._id });})
+      .then( trip => {res.status(200).json({ message: 'New trip created!', id: newTrip._id });})
       .catch( err => {res.status(500).json({error:err, message:"Cannot create trip"}); });
 };
 

@@ -1,0 +1,28 @@
+<form (ngSubmit)="tripform(myForm)" #myForm="ngForm">
+  <p> Título
+    <input type="text" name="title" [(ngModel)]="title" minlength="6" />
+  </p>
+  <p> Descripción
+    <input type="text" name="description" [(ngModel)]="description" required />
+  </p>
+  <p> Categoría
+    <input type="text" name="category" [(ngModel)]="category" required />
+  </p>
+  <p> Duración
+    <input type="text" name="duration" [(ngModel)]="duration" required />
+  </p>
+  <p> Localización
+    <input type="text" name="location" [(ngModel)]="location" required />
+  </p>
+  <p> Localización de Salida:
+    <input type="text" name="locationOfStart" [(ngModel)]="locationOfStart" required />
+  </p>
+  <p> Localización de Llegada:
+    <input type="text" name="locationOfEnd" [(ngModel)]="locationOfEnd" required />
+  </p>
+  <p> Opciones:
+    <input type="text" name="options" [(ngModel)]="options" required />
+  </p>
+  <p> FOTOOO:  </p>
+  <button type="submit"> Nuevo viaje </button>
+</form>

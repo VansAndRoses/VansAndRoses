@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', controller.getAllList);
 router.get('/single/:id', controller.singleTrip);
-router.post('/new-trip', upload.single('file'),  controller.createTrip);
+router.post('/new-trips', upload.single('file'),  controller.createTrip);
 
 router.put('/single/:id/edit', upload.single('file'), controller.editTrip);
 router.delete('/single/:id/delete', controller.removeTrip);

@@ -51,7 +51,7 @@ export class AuthService {
     }
 
     edit(id,user) {
-      return this.http.put(`${BASE_URL}/${id}/edit`,user, this.options)
+      return this.http.put(`${BASEURL}/${id}/edit`,user, this.options)
        .map((res) => res.json());
     }
 

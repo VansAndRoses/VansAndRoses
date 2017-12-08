@@ -21,6 +21,7 @@ import { RouterModule } from "@angular/router";
 import { UserMyprofileComponent } from './user-myprofile/user-myprofile.component';
 import { UserIdComponent } from './user-id/user-id.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { NewTripComponent } from './new-trip/new-trip.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     SignupComponent,
     UserMyprofileComponent,
     UserIdComponent,
-    UserEditComponent
+    UserEditComponent,
+    NewTripComponent
   ],
   imports: [
     BrowserModule,

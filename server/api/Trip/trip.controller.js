@@ -3,14 +3,14 @@ const tripModel = require('./Trip.model');
 //Get trips
 exports.getAllList = function (req,res,next){
   tripModel.find()
-  .then( tripList => {res.status(200).res.json(tripList);})
+  .then( tripList => {res.status(200).json(tripList);})
   .reject(err => { res.status(500).json(err);});
 };
 
 
 exports.singleTrip = function(req,res,next){
   tripModel.findById(req.params.id).populate("itinerations")
-  .then(singleTrip => {res.status(200).res.json(singleTrip);})
+  .then(singleTrip => {res.status(200).json(singleTrip);})
   .reject(err => { res.status(500).json(err);});
 };
 

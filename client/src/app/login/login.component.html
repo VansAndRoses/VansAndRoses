@@ -2,7 +2,7 @@
   <div>
     <a routerLink="/" class="brand-logo"><img id ="logo"src="../assets/vansandroseslogo.png" alt=""></a>
     <ul *ngIf="!user"  class="right hide-on-med-and-down">
-      
+
       <li><a [routerLink]="['/signup']">Sign-Up</a></li>
     </ul>
     <ul *ngIf="user"  class="right hide-on-med-and-down">
@@ -22,4 +22,5 @@
 
   <button (click)="login()"> login </button>
   <button (click)="logout()"> logout </button>
+  <button>NO PULSES F5</button>
 </form>

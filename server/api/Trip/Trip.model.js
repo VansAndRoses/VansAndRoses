@@ -28,8 +28,7 @@ const tripSchema = new Schema({
   },
   locationOfEnd: {
     latitude: Number,
-    longitude: Number,
-    description: String
+    longitude: Number
   },
   options: {
     animals: Boolean,

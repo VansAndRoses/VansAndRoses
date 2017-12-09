@@ -9,7 +9,7 @@ const debug = require('debug')("angularauth:"+path.basename(__filename).split('.
 
 /* GET home page. */
 exports.signUp = function(req, res, next) {
-  const {username, password} = req.body;
+  const {name, lastname, email, username, password, typeOfVan} = req.body;
 
   if (!username || !password)
     return res.status(400).json({ message: 'Provide username and password' });
@@ -24,8 +24,12 @@ exports.signUp = function(req, res, next) {
     const hashPass = bcrypt.hashSync(password, salt);
     debug('creating user');
     const theUser = new User({
+      name,
+      lastname,
+      email,
       username,
-      password: hashPass
+      password: hashPass,
+      typeOfVan
     });
     return theUser.save()
     .then(user =>{

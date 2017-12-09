@@ -9,19 +9,23 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 formInfo = {
+  name:"",
+  lastname:"",
+  email:"",
   username:"",
-  password:""
+  password:"",
+  typeOfVan:""
 }
   constructor(public auth:AuthService) { }
 
   ngOnInit() {
   }
 
-  signup(){
-    const {username, password} = this.formInfo;
+  signup(formInfo){
+    const {name,lastname,email,username,password,typeOfVan} = this.formInfo;
     if(username != "" && password != ""){
       console.log(`Signup with ${username} ${password}`)
-      this.auth.signup(username, password)
+      this.auth.signup(name,lastname,email,username,password,typeOfVan)
       .map(user => console.log(user))
       .subscribe();
     } else{

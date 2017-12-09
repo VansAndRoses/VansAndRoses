@@ -1,4 +1,4 @@
-<nav >
+<nav>
   <div>
     <a routerLink="/" class="brand-logo"><img id ="logo"src="../assets/vansandroseslogo.png" alt=""></a>
     <ul *ngIf="!user"  class="right hide-on-med-and-down">
@@ -20,7 +20,7 @@
   <label> Password </label>
   <input type="password" [(ngModel)]="formInfo.password" name="password"/>
 
-  <button (click)="login()"> login </button>
+  <button (click)="login()" [routerLink]="['/user/myprofile']"> login </button>
   <button (click)="logout()"> logout </button>
   <button>NO PULSES F5</button>
 </form>

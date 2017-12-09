@@ -1,3 +1,14 @@
-<p>
-  user-myprofile works!
-</p>
+
+<div *ngIf="!user">
+<h2>NO USER LOGGED IN</h2>
+</div>
+
+<div *ngIf="user">
+<h2>{{ user.name }} {{ user.lastname }}</h2>
+<p>{{ user.username }}</p>
+<p>{{ user.email }}</p>
+
+<button [routerLink]="['/home-trips']"> Buscar viajes </button>
+<button [routerLink]="['/new-trips']"> Crear viaje </button>
+<button (click)="logout()"> logout </button>
+</div>

@@ -4,14 +4,14 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   name: String,
   lastname: String,
+  email: String,
   username: String,
   password: String,
   typeOfVan: String,
   photo: String,
   location: {
       latitude: Number,
-      longitude: Number,
-      description: String
+      longitude: Number
     },
   }, {
   timestamps: {

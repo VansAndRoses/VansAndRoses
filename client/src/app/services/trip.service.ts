@@ -21,7 +21,7 @@ export class TripService {
   newTrip(trip) {
     console.log("esto estoy pasando a mi servicio")
     console.log(trip)
-    return this.http.post(`${this.BASE_URL}/trip/new-trips`, {}, this.options)
+    return this.http.post(`${this.BASE_URL}/trip/new-trips`, trip, this.options)
       .map(res => res.json())
   }
 

@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 import { environment }  from '../../environments/environment';
-const  BASE_URL ="http//localhost:3000"
+const  BASE_URL ="http://localhost:3000"
 @Injectable()
 export class ItinerationService {
 
@@ -19,7 +19,9 @@ export class ItinerationService {
   }
 
   newItineration(itinerations) {
-    return this.http.post(`${BASE_URL}/api/itineration/new-tineration`, itinerations, this.options)
+    console.log("esto estoy pasando a mi servicio")
+    console.log(itinerations)
+    return this.http.post(`${BASE_URL}/api/itineration/new-itineration`, itinerations, this.options)
       .map(res => res.json())
   }
 

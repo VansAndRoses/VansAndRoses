@@ -8,7 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UserMyprofileComponent } from './user-myprofile/user-myprofile.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { NewTripComponent } from './new-trip/new-trip.component';
-
+import { NewItinerationComponent } from './new-itineration/new-itineration.component';
 export const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'signup', component: SignupComponent },
@@ -19,6 +19,7 @@ export const routes: Routes = [
        ]
    },
   { path: 'new-trips', component: NewTripComponent},
+  { path: 'new-itineration', component: NewItinerationComponent},
   { path: 'home-trips', component: HomeTripsComponent},
   { path: 'event', component: EventComponent },
   { path: '**', redirectTo: '' }

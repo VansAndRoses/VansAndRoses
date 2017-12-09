@@ -22,6 +22,7 @@ import { UserMyprofileComponent } from './user-myprofile/user-myprofile.componen
 import { UserIdComponent } from './user-id/user-id.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { NewTripComponent } from './new-trip/new-trip.component';
+import { NewItinerationComponent } from './new-itineration/new-itineration.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { NewTripComponent } from './new-trip/new-trip.component';
     UserMyprofileComponent,
     UserIdComponent,
     UserEditComponent,
-    NewTripComponent
+    NewTripComponent,
+    NewItinerationComponent
   ],
   imports: [
     BrowserModule,

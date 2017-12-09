@@ -23,6 +23,8 @@ import { UserIdComponent } from './user-id/user-id.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { NewTripComponent } from './new-trip/new-trip.component';
 import { NewItinerationComponent } from './new-itineration/new-itineration.component';
+import { HomeItinerationComponent } from './home-itineration/home-itineration.component';
+
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { NewItinerationComponent } from './new-itineration/new-itineration.compo
     UserIdComponent,
     UserEditComponent,
     NewTripComponent,
-    NewItinerationComponent
+    NewItinerationComponent,
+    HomeItinerationComponent,
   ],
   imports: [
     BrowserModule,

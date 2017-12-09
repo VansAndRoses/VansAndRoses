@@ -31,7 +31,11 @@ const itinerationSchema = new Schema({
       longitude: Number,
       description: String
     },
-  washingPlace: String,
+  washingPlace: {
+      latitude: Number,
+      longitude: Number,
+      description: String
+    },
   photo: String,
 }, {
   timestamps: {

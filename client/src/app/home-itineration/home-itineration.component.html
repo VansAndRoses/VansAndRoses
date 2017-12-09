@@ -1,0 +1,12 @@
+<p>
+  home-itinerations works!
+</p>
+<div *ngFor= "let e of listItinerations">
+  <h2>{{e.title}}</h2>
+  <p>{{e.description}}</p>
+  <p>Localización de Salida: {{e.locationOfStart}}</p>
+  <p>Localización de llegada: {{e.locationOfEnd}}</p>
+  <p>Lugar para pernoctar: {{e.placeToSleep}}</p>
+  <p>Lugar para comer: {{e.placeToEat}}</p>
+  <p>Lugar para asearse: {{e.washingPlace}}</p>
+</div>

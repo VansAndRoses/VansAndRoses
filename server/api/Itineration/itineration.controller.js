@@ -4,14 +4,14 @@ itinerationModel = require('./itineration.model');
 //Get Plates
 exports.getAllItineration = function (req,res,next){
   itinerationModel.find()
-  .then( itinerationList => {res.status(200).res.json(itinerationList);})
-  .reject(err => { res.status(500).json(err)});
+  .then( itinerationList => {res.status(200).json(itinerationList);})
+  .reject(err => { res.status(500).json(err);});
 };
 
 exports.singleItineration = function(req,res,next){
   itinerationModel.findById(req.params.id)
-  .then(singleItineration => {res.status(200).res.json(singleItineration);})
-  .reject(err => { res.status(500).json(err)});
+  .then(singleItineration => {res.status(200).json(singleItineration);})
+  .reject(err => { res.status(500).json(err);});
 };
 
 // POST
@@ -30,7 +30,7 @@ exports.createItineration = function(req, res, next) {
 
   console.log("Itineration created");
 	newItineration.save()
-      .then( Itineration => {res.status(200).res.json({ message: 'New Itineration created!', id: newPlate._id });})
+      .then( Itineration => {res.status(200).json({ message: 'New Itineration created!', id: newItineration._id });})
       .catch( err => {res.status(500).json({error:err, message:"Cannot create Itineration"}); });
 };
 
@@ -49,7 +49,7 @@ exports.editItineration = function(req, res ,next) {
     if (err) {
       return res.status(400).json({ message: "Unable to update Itineration", error});
     }
-    res.status(500).res.json({ message: 'Itineration updated successfully'});
+    res.status(500).json({ message: 'Itineration updated successfully'});
   });
 };
 

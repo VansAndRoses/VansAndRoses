@@ -1,5 +1,12 @@
 <div *ngIf= "compTrip">
         <h1>{{compTrip.title}}</h1>
+        <p>{{compTrip.description}}</p>
+        <p>{{compTrip.category}}</p>
+        <p>{{compTrip.duration}}</p>
+        <p>{{compTrip.location}}</p>
+        <p>{{compTrip.locationOfStart}}</p>
+        <p>{{compTrip.locationOfEnd}}</p>
+        <p>{{compTrip.options}}</p>
       <div>
         <div *ngFor= "let e of compTrip.itinerations">
             <p> Title: {{e.title}}</p>

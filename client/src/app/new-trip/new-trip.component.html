@@ -5,15 +5,41 @@
   <p> Descripción
     <input type="text" name="description" [(ngModel)]="description" required />
   </p>
-  <p> Categoría
-    <input type="text" name="category" [(ngModel)]="category" required />
-  </p>
+  <label> Categoría </label>
+    <select name="category" [(ngModel)]="category" required>
+      <option value="Surf">Surf</option>
+      <option value="Snow" >Snow</option>
+      <option value="Climbing" >Climbing</option>
+      <option value="Trekking" >Trekking</option>
+      <option value="Bicycle">Bicycle</option>
+      <option value="Gastronomy">Gastronomy</option>
+      <option value="Tourism">Tourism</option>
+      <option value="Others">Others</option>
+    </select>
+
   <p> Duración
     <input type="text" name="duration" [(ngModel)]="duration" required />
   </p>
-  <p> Localización
-    <input type="text" name="location" [(ngModel)]="location" required />
-  </p>
+  <label> Localización </label>
+    <select name="location" [(ngModel)]="location" required>
+      <option value="Andalucía">Andalucía</option>
+      <option value="Aragón" >Aragón</option>
+      <option value="Asturias" >Asturias</option>
+      <option value="Baleares" >Baleares</option>
+      <option value="Canarias">Canarias</option>
+      <option value="Cantabria">Cantabria</option>
+      <option value="Castilla La Mancha">Castilla La Mancha</option>
+      <option value="Cataluña">Cataluña</option>
+      <option value="Extremadura">Extremadura</option>
+      <option value="Galicia">Galicia</option>
+      <option value="La Rioja">La Rioja</option>
+      <option value="Región de Murcia">Región de Murcia</option>
+      <option value="Comunidad foral de Navarra">Comunidad foral de Navarra</option>
+      <option value="País Vasco">País Vasco</option>
+      <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+      <option value="Ceuta">Ceuta</option>
+      <option value="Melilla">Melilla</option>
+    </select>
   <p> Localización de Salida:
     <input type="text" name="locationOfStart" [(ngModel)]="locationOfStart" required />
   </p>

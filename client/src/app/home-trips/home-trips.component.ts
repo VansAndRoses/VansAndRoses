@@ -13,7 +13,7 @@ listTrips:Object;
 
   ngOnInit() {
     this.listTripService.getTripList()
-      .subscribe(trips => this.listTrips = trips)
+      .subscribe(trips => {this.listTrips = trips})
   }
 
 }

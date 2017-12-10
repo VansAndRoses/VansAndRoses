@@ -1,12 +1,12 @@
-<p>
-  home-trips works!
-</p>
+<h1>
+Viajes
+</h1>
 <div *ngFor= "let e of listTrips">
   <h2>{{e.title}}</h2>
   <h4>Duration: {{e.duration}} days</h4>
-  <h4>Category: {{e.category}}</h4>
-  <p>{{e.description}}</p>
-  <p>{{e.description}}</p>
-  <p>Animals: {{e.options.animals}}</p>
-  <p>Kids: {{e.options.kids}}</p>
+  <p>Description: {{e.description}}</p>
+  <p>Categoría: {{e.category}} </p>
+  <p>Localización: {{e.location}} </p>
+  <p>Localización de Salida: {{e.locationOfStart}}</p>
+    <p>Localización de llegada: {{e.locationOfEnd}}</p><br><br>
 </div>

@@ -6,9 +6,12 @@ import { Observable } from 'rxjs/Rx';
 import { environment }  from '../../environments/environment';
 @Injectable()
 export class TripService {
-
+ // newRes : any;
  BASE_URL ="http://localhost:3000/api"
-
+// addRes (o){
+//   this.newRes = o;
+//   console.log(this.newRes)
+// }
   options : {withCredentials:true };
   constructor(private http: Http) {
   }
@@ -27,7 +30,8 @@ export class TripService {
 
   getTripDetails(id){
     return this.http.get(`${this.BASE_URL}/trip/single/${id}`, this.options)
-     .map(res => res.json());
+     .map(res => res.json())
+    //  .map(res => this.addRes (res))
   }
 
   //Remove y Edit

@@ -6,9 +6,9 @@ const tripSchema = new Schema({
   title: {
     type: String
   },
-  itinerations: {
-    type: [Schema.Types.ObjectId], ref: 'Itineration',
-  },
+  itinerations: [{
+    type: Schema.Types.ObjectId, ref: 'Itineration',
+  }],
   description: {
     type: String
   },

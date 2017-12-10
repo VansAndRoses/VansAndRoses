@@ -1,23 +1,23 @@
 <form (ngSubmit)="itinerationform(myForm)" #myForm="ngForm">
-  <p> Título
+  <p> Title:
     <input type="text" name="title" [(ngModel)]="title" minlength="6" />
   </p>
-  <p> Descripción
+  <p> Description:
     <input type="text" name="description" [(ngModel)]="description" required />
   </p>
-  <p> Localización de Salida:
+  <p> Localtion of Start:
     <input type="text" name="locationOfStart" [(ngModel)]="locationOfStart" required />
   </p>
-  <p> Localización de Llegada:
+  <p> Location of End:
     <input type="text" name="locationOfEnd" [(ngModel)]="locationOfEnd" required />
   </p>
-  <p> Lugar para pernoctar:
+  <p> Place to Sleep:
     <input type="text" name="placeToSleep" [(ngModel)]="placeToSleep" required />
   </p>
-  <p> Lugar para comer:
+  <p> Place to Eat:
     <input type="text" name="placeToEat" [(ngModel)]="placeToEat" required />
   </p>
-  <p> Lugar para asearse:
+  <p> Washing Place:
     <input type="text" name="washingPlace" [(ngModel)]="washingPlace" required />
   </p>
   <p> FOTOOO:  </p>

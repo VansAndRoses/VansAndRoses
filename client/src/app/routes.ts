@@ -11,10 +11,12 @@ import { NewTripComponent } from './new-trip/new-trip.component';
 import { NewItinerationComponent } from './new-itineration/new-itineration.component';
 import { HomeItinerationComponent } from './home-itineration/home-itineration.component';
 
+import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
+
 export const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'signup', component: SignupComponent },
-  { path: 'user/myprofile', component: UserMyprofileComponent,
+  { path: 'user/myprofile', component: UserMyprofileComponent, canActivate: [ IsLoggedInService ],
       children: [
         { path: ':id/edit', component: UserEditComponent },
         { path: 'user-my-message/:id', component: UserMyMessagesComponent}

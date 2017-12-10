@@ -27,7 +27,7 @@ formInfo = {
       console.log(`Signup with ${username} ${password}`)
       this.auth.signup(name,lastname,email,username,password,typeOfVan)
       .map(user => console.log(user))
-      .subscribe();
+      .subscribe(formInfo);
     } else{
       console.log("You must set a username and a password");
     }

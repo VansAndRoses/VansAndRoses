@@ -1,3 +1,14 @@
-<p>
-  home-trips-id works!
-</p>
+<div *ngIf= "compTrip">
+        <h1>{{compTrip.title}}</h1>
+      <div>
+        <div *ngFor= "let e of compTrip.itinerations">
+            <p> Title: {{e.title}}</p>
+            <p> Description: {{e.description}}</p>
+            <p> Localización de Salida: {{e.locationOfStart}}</p>
+            <p> Localización de llegada: {{e.locationOfEnd}}</p>
+            <p> Lugar para dormir: {{e.placeToSleep}}</p>
+            <p> Lugar para comer: {{e.placeToEat}}</p>
+            <p> Lugar para asearse: {{e.washingPlace}}</p><br><br>
+          </div>
+        </div>
+        </div>

@@ -21,7 +21,8 @@ export const routes: Routes = [
        ]
    },
   { path: 'new-trips', component: NewTripComponent},
-  { path: 'new-itineration', component: NewItinerationComponent},
+  { path: 'new-itineration/:id', component: NewItinerationComponent},
+  { path: 'single/:id', component: HomeTripsIdComponent},
   { path: 'home-itineration', component: HomeItinerationComponent},
   { path: 'home-trips', component: HomeTripsComponent},
   { path: 'event', component: EventComponent },

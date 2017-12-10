@@ -9,9 +9,10 @@ exports.getAllList = function (req,res,next){
 
 
 exports.singleTrip = function(req,res,next){
-  tripModel.findById(req.params.id).populate("itinerations")
-  .then(singleTrip => {res.status(200).json(singleTrip);})
-  .reject(err => { res.status(500).json(err);});
+  tripModel.findById(req.params.id)
+    .populate("itinerations")
+    .then(singleTrip => {res.status(200).json(singleTrip);})
+    .catch(err => { res.status(500).json(err);});
 };
 
 

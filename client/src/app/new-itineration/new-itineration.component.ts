@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItinerationService } from '../services/itineration.service';
-import { Routes } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-new-itineration',
@@ -8,15 +9,26 @@ import { Routes } from '@angular/router';
   styleUrls: ['./new-itineration.component.css']
 })
 export class NewItinerationComponent implements OnInit {
-
-  constructor(private newItinerationService : ItinerationService) { }
+   itineration :any;
+  constructor(private newItinerationService : ItinerationService, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
+
   }
   itinerationform(data) {
+
     console.log("lo que envio a mi servicio")
     console.log(data.value)
-    this.newItinerationService.newItineration(data.value)
-      .subscribe(trips => console.log(trips))
+    this.route.params
+      .subscribe((params) => {
+        console.log("parametro de viaje")
+        console.log('-----',params,params.id);
+    this.newItinerationService.newItineration(data.value, params.id)
+      .subscribe( itineration => this.itineration = itineration);
+    // this.newItinerationService.newItineration(data.value, id)
+    //   .subscribe(trips => console.log(trips))
+
   }
+)}
 }

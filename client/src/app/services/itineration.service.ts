@@ -18,10 +18,10 @@ export class ItinerationService {
     .map(res => res.json());
   }
 
-  newItineration(itinerations) {
+  newItineration(itinerations, id) {
     console.log("esto estoy pasando a mi servicio")
-    console.log(itinerations)
-    return this.http.post(`${BASE_URL}/api/itineration/new-itineration`, itinerations, this.options)
+    console.log(itinerations, id)
+    return this.http.post(`${BASE_URL}/api/itineration/new-itineration/${id}`, itinerations, this.options)
       .map(res => res.json())
   }
 

@@ -1,5 +1,6 @@
 mongoose = require('mongoose');
 itinerationModel = require('./itineration.model');
+tripModel = require('../Trip/Trip.model');
 
 //Get Plates
 exports.getAllItineration = function (req,res,next){
@@ -16,6 +17,8 @@ exports.singleItineration = function(req,res,next){
 
 // POST
 exports.createItineration = function(req, res, next) {
+  console.log('Req.params =>');
+  console.log(req.params);
   const newItineration = new itinerationModel({
     title:       req.body.title,
     description:   req.body.description,
@@ -30,21 +33,24 @@ exports.createItineration = function(req, res, next) {
 
   console.log("Itineration created");
 	newItineration.save()
-      .then( Itineration => {res.status(200).json({ message: 'New Itineration created!', id: newItineration._id });})
-      .catch( err => {res.status(500).json({error:err, message:"Cannot create Itineration"}); });
+    .then(newItin => {
+      tripModel.findByIdAndUpdate(req.params.id, {$push: {itinerations: newItin._id}}, {new: true})
+        .then( trip => res.status(200).json(trip));
+    })
+    .catch(err => res.status(500).json({ message: 'Something went wrong'}));
 };
 
 exports.editItineration = function(req, res ,next) {
   const updates = {
-    title:          req.body.title,
-    description:   req.body.description,
-    locationOfStart:    req.body.locationOfStart,
-    locationOfEnd:    req.body.locationOfEnd,
-    placeToSleep:      req.body.placeToSleep,
-    placeToEat:      req.body.placeToEat,
-    washingPlace:    req.body.washingPlace,
-    photo:           req.body.photo,
-  };
+    title,
+    description,
+    locationOfStart,
+    locationOfEnd,
+    placeToSleep,
+    placeToEat,
+    washingPlace,
+    photo,
+  } = req.body;
   itinerationModel.findByIdAndUpdate(req.params.id, updates, (err) => {
     if (err) {
       return res.status(400).json({ message: "Unable to update Itineration", error});

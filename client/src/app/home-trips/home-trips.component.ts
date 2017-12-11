@@ -9,6 +9,8 @@ import { Routes } from '@angular/router';
 })
 export class HomeTripsComponent implements OnInit {
 listTrips:Object;
+options = ['Surf','Snow','Climbing', 'Trekking', 'Bicycle', 'Gastronomy', 'Tourism', 'Others']
+options2 = ['Andalucía','Aragón','Asturias', 'Baleares', 'Canarias', 'Cantabria', 'Castilla La Mancha', 'Cataluña', 'Extremadura', 'Galicia', 'La Rioja', 'Región de Murcia', 'Comunidad foral de Navarra', 'País Vasco', 'Comunidad Valenciana', 'Ceuta','Melilla']
   constructor(private listTripService : TripService) { }
 
   ngOnInit() {

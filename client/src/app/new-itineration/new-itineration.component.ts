@@ -25,10 +25,14 @@ export class NewItinerationComponent implements OnInit {
         console.log("parametro de viaje")
         console.log('-----',params,params.id);
     this.newItinerationService.newItineration(data.value, params.id)
-      .subscribe( itineration => this.itineration = itineration);
+      .subscribe( itineration => {
+        this.itineration = itineration
+        this.router.navigate(['/single', params.id])
+      });
+      }
+    );
     // this.newItinerationService.newItineration(data.value, id)
     //   .subscribe(trips => console.log(trips))
 
   }
-)}
 }

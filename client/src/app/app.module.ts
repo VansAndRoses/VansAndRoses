@@ -25,6 +25,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { NewTripComponent } from './new-trip/new-trip.component';
 import { NewItinerationComponent } from './new-itineration/new-itineration.component';
 import { HomeItinerationComponent } from './home-itineration/home-itineration.component';
+import { NewReviewComponent } from './new-review/new-review.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { HomeItinerationComponent } from './home-itineration/home-itineration.co
     NewTripComponent,
     NewItinerationComponent,
     HomeItinerationComponent,
+    NewReviewComponent,
   ],
   imports: [
     BrowserModule,

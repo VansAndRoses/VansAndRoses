@@ -1,14 +1,14 @@
-<div *ngIf= "compTrip">
-        <h1>{{compTrip.title}}</h1>
-        <p>{{compTrip.description}}</p>
-        <p>{{compTrip.category}}</p>
-        <p>{{compTrip.duration}}</p>
-        <p>{{compTrip.location}}</p>
-        <p>{{compTrip.locationOfStart}}</p>
-        <p>{{compTrip.locationOfEnd}}</p>
-        <p>{{compTrip.options}}</p>
+<div *ngIf= "compTrip.trip">
+        <h1>{{compTrip.trip.title}}</h1>
+        <p>{{compTrip.trip.description}}</p>
+        <p>{{compTrip.trip.category}}</p>
+        <p>{{compTrip.trip.duration}}</p>
+        <p>{{compTrip.trip.location}}</p>
+        <p>{{compTrip.trip.locationOfStart}}</p>
+        <p>{{compTrip.trip.locationOfEnd}}</p>
+        <p>{{compTrip.trip.options}}</p>
       <div>
-        <div *ngFor= "let e of compTrip.itinerations">
+        <div *ngFor= "let e of compTrip.trip.itinerations">
             <p> Title: {{e.title}}</p>
             <p> Description: {{e.description}}</p>
             <p> Localización de Salida: {{e.locationOfStart}}</p>

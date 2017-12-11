@@ -26,6 +26,8 @@ import { NewTripComponent } from './new-trip/new-trip.component';
 import { NewItinerationComponent } from './new-itineration/new-itineration.component';
 import { HomeItinerationComponent } from './home-itineration/home-itineration.component';
 import { NewReviewComponent } from './new-review/new-review.component';
+import { SearchPipePipe } from './search-pipe.pipe';
+
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { NewReviewComponent } from './new-review/new-review.component';
     NewItinerationComponent,
     HomeItinerationComponent,
     NewReviewComponent,
+    SearchPipePipe,
   ],
   imports: [
     BrowserModule,

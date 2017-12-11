@@ -1,7 +1,23 @@
 <h1>
 Viajes
 </h1>
-<div *ngFor= "let e of listTrips">
+<label for="things_name"> Search Category: </label>
+<select  [(ngModel)]="categorySearch">
+  <option *ngFor="let option of options"[value]="option">
+       {{ option }}
+     </option>
+  </select>
+<label for="things_name"> Search Location: </label>
+  <select  [(ngModel)]="locationSearch">
+    <option *ngFor="let option of options2"[value]="option">
+         {{ option }}
+       </option>
+    </select>
+
+<div>{{locationSearch}}</div>
+<div>{{categorySearch}}</div>
+
+<div *ngFor= "let e of listTrips | searchPipe: categorySearch: locationSearch; let i = index" class="list">
   <h2>{{e.title}}</h2>
   <h4>Duration: {{e.duration}} days</h4>
   <p>Description: {{e.description}}</p>
@@ -9,5 +25,4 @@ Viajes
   <p>Localización: {{e.location}} </p>
   <p>Localización de Salida: {{e.locationOfStart}}</p>
     <p>Localización de llegada: {{e.locationOfEnd}}</p><br><br>
-    <!-- <button [routerLink]="['/home-trips']"> Ver detalles </button> -->
 </div>

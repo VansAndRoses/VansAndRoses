@@ -27,7 +27,6 @@ import { NewItinerationComponent } from './new-itineration/new-itineration.compo
 import { HomeItinerationComponent } from './home-itineration/home-itineration.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

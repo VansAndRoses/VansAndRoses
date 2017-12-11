@@ -1,5 +1,13 @@
-<!--The content below is only a placeholder and can be replaced.-->
 
+<div *ngIf="!user">
+<h2>NO USER LOGGED IN</h2>
+</div>
 
+<div *ngIf="user">
+  <ul>
+  <li><a [routerLink]="['/user/myprofile']">User Profile</a></li>
+  <li><a [routerLink]="['/home-trips']">Trips</a></li>
+  </ul>
+</div>
 
 <router-outlet></router-outlet>

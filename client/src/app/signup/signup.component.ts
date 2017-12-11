@@ -21,13 +21,13 @@ formInfo = {
   ngOnInit() {
   }
 
-  signup(formInfo){
+  signup(){
     const {name,lastname,email,username,password,typeOfVan} = this.formInfo;
     if(username != "" && password != ""){
       console.log(`Signup with ${username} ${password}`)
       this.auth.signup(name,lastname,email,username,password,typeOfVan)
       .map(user => console.log(user))
-      .subscribe(formInfo);
+      .subscribe();
     } else{
       console.log("You must set a username and a password");
     }

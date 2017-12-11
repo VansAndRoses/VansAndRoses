@@ -14,7 +14,7 @@ import { HomeItinerationComponent } from './home-itineration/home-itineration.co
 import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 
 export const routes: Routes = [
-  { path: '', component: LoginComponent},
+  { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'user/myprofile', component: UserMyprofileComponent, canActivate: [ IsLoggedInService ],
       children: [
@@ -26,7 +26,7 @@ export const routes: Routes = [
   { path: 'new-itineration/:id', component: NewItinerationComponent},
   { path: 'single/:id', component: HomeTripsIdComponent},
   { path: 'home-itineration', component: HomeItinerationComponent},
-  { path: 'home-trips', component: HomeTripsComponent},
+  { path: 'home-trips', component: HomeTripsComponent, canActivate: [ IsLoggedInService ]},
   { path: 'event', component: EventComponent },
   { path: '**', redirectTo: '' }
 ];

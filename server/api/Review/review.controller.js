@@ -19,6 +19,13 @@ const Trip = require('../Trip/Trip.model');
       });
       console.log(newReview);
       newReview.save()
-        .then(() => res.status(200).json({message:"okele"}))
+        .then(result1 => {
+          Trip.findByIdAndUpdate(review.to)
+          .then(result2 => {
+            result2.quantityReviews ++;
+            result2.average = result1.value/result2.quantityReviews;
+          res.status(200).json({message:"okele"});
+        });
+      })
         .catch(err => res.status(500).json({ message: 'You are idiot', error: err }));
-    };
+};

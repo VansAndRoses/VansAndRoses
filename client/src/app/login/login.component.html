@@ -15,12 +15,14 @@
 <form >
   <h2> Login </h2>
   <label> Username </label>
+  <br>
   <input type="text" [(ngModel)]="formInfo.username" name="username"/>
   <br>
   <label> Password </label>
+  <br>
   <input type="password" [(ngModel)]="formInfo.password" name="password"/>
-
-  <button (click)="login()"> login </button>
-  <button (click)="logout()"> logout </button>
+  <br>
+  <br>
+  <button (click)="login()"> Login </button>
   <button>NO PULSES F5</button>
 </form>

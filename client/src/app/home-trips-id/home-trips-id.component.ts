@@ -19,7 +19,10 @@ compTrip : any;
       .subscribe((params) => {
         console.log(params.id);
         this.tripService.getTripDetails(params.id)
-          .subscribe( trip => this.compTrip = trip)
+          .subscribe( trip => {this.compTrip = trip
+            console.log(trip);
+          })
+
 
         })
   }

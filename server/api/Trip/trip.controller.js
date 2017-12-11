@@ -1,4 +1,6 @@
 const tripModel = require('./Trip.model');
+const reviewModel = require('../Review/Review.model');
+
 
 //Get trips
 exports.getAllList = function (req,res,next){
@@ -11,7 +13,12 @@ exports.getAllList = function (req,res,next){
 exports.singleTrip = function(req,res,next){
   tripModel.findById(req.params.id)
     .populate("itinerations")
-    .then(singleTrip => {res.status(200).json(singleTrip);})
+    .then(singleTrip => {
+      reviewModel.find({to: req.params.id})
+       .then(review => {
+         res.status(200).json({trip:singleTrip, reviews:review});
+       });
+     })
     .catch(err => { res.status(500).json(err);});
 };
 

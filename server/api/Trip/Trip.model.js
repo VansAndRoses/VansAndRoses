@@ -20,6 +20,8 @@ const tripSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+  average: 0,
+  quantityReviews: 0,
   duration: Number,
   location: String,
   locationOfStart: {
@@ -30,6 +32,7 @@ const tripSchema = new Schema({
     latitude: Number,
     longitude: Number
   },
+
   options: {
     animals: Boolean,
     kids: Boolean

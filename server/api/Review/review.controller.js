@@ -22,10 +22,11 @@ const Trip = require('../Trip/Trip.model');
         .then(result1 => {
           Trip.findById(req.params.id)
           .then(result2 => {
-            console.log('8======D esto vale trip');
             console.log(result2);
             result2.quantityReviews ++;
-            result2.average = result1.rating/result2.quantityReviews;
+            console.log(result2.quantityReviews);
+            result2.count+= result1.rating;
+            result2.average = result2.count/result2.quantityReviews;
             result2.save()
               .then(result2Updated=>res.status(200).json({result2Updated, result1}));
 

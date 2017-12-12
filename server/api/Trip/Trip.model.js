@@ -11,12 +11,16 @@ const tripSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  average:{
+  count:{
     type: Number,
     default:0
   },
   quantityReviews: {
     type: Number,
+    default:0
+  },
+  average:{
+    type:Number,
     default:0
   },
   duration: Number,
@@ -43,5 +47,4 @@ const tripSchema = new Schema({
     updatedAt: 'updated_at'
   }
 });
-
 module.exports = mongoose.model('Trip', tripSchema);

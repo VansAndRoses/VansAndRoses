@@ -1,5 +1,6 @@
 <div *ngIf= "compTrip">
         <h1>{{compTrip.trip.title}}</h1>
+        <h1>{{compTrip.trip.average}}</h1>
         <p>{{compTrip.trip.description}}</p>
         <p>{{compTrip.trip.category}}</p>
         <p>{{compTrip.trip.duration}}</p>
@@ -18,12 +19,13 @@
             <p> Lugar para asearse: {{e.washingPlace}}</p><br><br>
           </div>
         </div>
-        <div *ngFor= "let e of compTrip.trip.reviews">
+        <div *ngFor= "let e of compTrip.reviews">
             <p> From: {{e.from}}</p>
-            <p> To: {{e.to}}</p>
             <p> Rating: {{e.rating}}</p>
             <p> Text: {{e.text}}</p>
           </div>
         </div>
-
-<li><a [routerLink]="['/new-review', compTrip.trip._id]">Go to new review 8=================================D</a></li>
+<br>
+<button [routerLink]="['/new-review', compTrip.trip._id]">Go to new review</button>
+<br>
+<br>

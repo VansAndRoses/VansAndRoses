@@ -1,5 +1,6 @@
 const tripModel = require('./Trip.model');
 const reviewModel = require('../Review/Review.model');
+const userModel = require('../User/User.model');
 // const upload = require('../../config/multer');
 
 //Get trips
@@ -33,6 +34,7 @@ exports.createTrip = function(req, res, next) {
     title: req.body.title,
     itinerations: req.body.itinerations,
     description: req.body.description,
+    creator: req.user._id,
     category: req.body.category,
     duration: req.body.duration,
     location: req.body.location,

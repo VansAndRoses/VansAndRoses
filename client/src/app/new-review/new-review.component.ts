@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ReviewService } from '../services/review.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+
 
 @Component({
   selector: 'app-new-review',
@@ -9,7 +11,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NewReviewComponent implements OnInit {
   review:any;
+  private headers = new Headers({ 'Content-type' : 'application/json' });
+  private options = new RequestOptions ({headers: this.headers, withCredentials:true });
+
   constructor(private newReviewService : ReviewService, private route: ActivatedRoute, public router:Router) { }
+
+
+
 
   ngOnInit() {
   }

@@ -51,6 +51,7 @@ const tripRoutes = require('../api/Trip/index');
 const reviewRoutes = require('../api/Review/index');
 const itinerationRoutes = require('../api/Itineration/index');
 app.use('/auth', authRoutes);
+app.use('/user', authRoutes);
 // app.use('/event', eventRoutes);
 // app.use('/message', messageRoutes);
 app.use('/review', reviewRoutes);

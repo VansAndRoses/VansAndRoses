@@ -1,18 +1,17 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 import { environment }  from '../../environments/environment';
 @Injectable()
 export class TripService {
- // newRes : any;
+
  BASE_URL ="http://localhost:3000/api"
-// addRes (o){
-//   this.newRes = o;
-//   console.log(this.newRes)
-// }
-  options : {withCredentials:true };
+
+  private headers = new Headers({ 'Content-type' : 'application/json' });
+  private options = new RequestOptions ({headers: this.headers, withCredentials:true });
+
   constructor(private http: Http) {
   }
 

@@ -12,17 +12,18 @@
   </div>
 </nav>
 
-<form >
-  <h2> Login </h2>
-  <label> Username </label>
+<div class="siimple-grid">
+  <div class="siimple-grid-row">
+    <div class="siimple-grid-col siimple-grid-col--11">
+
+  <div class="siimple-h1">Login</div>
+  <label class="siimple-label">Username: </label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.username" name="username"/>
+  <label class="siimple-label">Password: </label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.password" name="password"/>
   <br>
-  <input type="text" [(ngModel)]="formInfo.username" name="username"/>
   <br>
-  <label> Password </label>
-  <br>
-  <input type="password" [(ngModel)]="formInfo.password" name="password"/>
-  <br>
-  <br>
-  <button (click)="login()"> Login </button>
-  <button>NO PULSES F5</button>
-</form>
+  <div (click)="login()" class="siimple-btn siimple-btn--teal">Login</div>
+  </div>
+</div>
+</div>

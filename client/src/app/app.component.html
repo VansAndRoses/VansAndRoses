@@ -3,11 +3,16 @@
 <h2>NO USER LOGGED IN</h2>
 </div>
 
-<div *ngIf="user">
-  <ul>
-  <li><a [routerLink]="['/user/myprofile']">User Profile</a></li>
-  <li><a [routerLink]="['/home-trips']">Trips</a></li>
-  </ul>
+<div *ngIf="user" class="siimple-navbar siimple-navbar--teal siimple-navbar--fluid">
+  <div class="siimple-layout--left">
+    <a class="siimple-navbar-title">Vans&Roses</a>
+  </div>
+  <div class="siimple-layout--right">
+    <a class="siimple-navbar-link" [routerLink]="['/user/myprofile']">User Profile</a>
+    <a class="siimple-navbar-link" [routerLink]="['/home-trips']">Trips</a>
+    <a class="siimple-navbar-link" [routerLink]="['/single, ${id}']">Single trip</a>
+  </div>
+
 </div>
 
 <router-outlet></router-outlet>

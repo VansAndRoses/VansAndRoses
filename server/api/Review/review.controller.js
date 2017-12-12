@@ -7,12 +7,12 @@ const Trip = require('../Trip/Trip.model');
     console.log(req.params.id);
     findById(req.params.id)
     .then(result => {res.status(200).json(result);})
-    .reject(err => { res.status(500).json(err);});
+    .reject(err => {res.status(500).json(err);});
   };
 
   exports.newReviewPost = function(req, res, next){
       const newReview = new Review({
-        from: req.params.id,
+
         to: req.params.id,
         text: req.body.text,
         rating: req.body.rating
@@ -20,11 +20,15 @@ const Trip = require('../Trip/Trip.model');
       console.log(newReview);
       newReview.save()
         .then(result1 => {
-          Trip.findByIdAndUpdate(review.to)
+          Trip.findById(req.params.id)
           .then(result2 => {
+            console.log('8======D esto vale trip');
+            console.log(result2);
             result2.quantityReviews ++;
-            result2.average = result1.value/result2.quantityReviews;
-          res.status(200).json({message:"okele"});
+            result2.average = result1.rating/result2.quantityReviews;
+            result2.save()
+              .then(result2Updated=>res.status(200).json({result2Updated, result1}));
+
         });
       })
         .catch(err => res.status(500).json({ message: 'You are idiot', error: err }));

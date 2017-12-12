@@ -2,12 +2,11 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const reviewSchema = new Schema({
-  from : { type: Schema.Types.ObjectId, ref: 'User', required: true },
-  to: { type: Schema.Types.ObjectId, ref: 'Trip', required: true },
+  from : { type: Schema.Types.ObjectId, ref: 'User'},
+  to: { type: Schema.Types.ObjectId, ref: 'Trip'},
   text : String,
   rating: {
     type: Number,
-    required: true
     },
   }, {
   timestamps: {

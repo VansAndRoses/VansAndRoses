@@ -3,19 +3,10 @@ const Schema = mongoose.Schema;
 const TYPES = require('../Trip-types');
 
 const tripSchema = new Schema({
-  title: {
-    type: String
-  },
-  itinerations: [{
-    type: Schema.Types.ObjectId, ref: 'Itineration',
-  }],
-  description: {
-    type: String
-  },
-  category: {
-    type: String,
-    enum: TYPES
-  },
+  title: {  type: String},
+  itinerations: [{type: Schema.Types.ObjectId, ref: 'Itineration',}],
+  description: {type: String},
+  category: {type: String,enum: TYPES},
   creator: {
     type: Schema.Types.ObjectId,
     ref: 'User'
@@ -37,7 +28,9 @@ const tripSchema = new Schema({
     animals: Boolean,
     kids: Boolean
   },
-  pic_path: String,
+  image: {
+   type: String, default: ''
+ },
 }, {
   timestamps: {
     createdAt: 'created_at',

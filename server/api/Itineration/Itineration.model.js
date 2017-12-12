@@ -36,7 +36,9 @@ const itinerationSchema = new Schema({
       longitude: Number,
       description: String
     },
-  photo: String,
+    image: {
+       type: String, default: ''
+     },
 }, {
   timestamps: {
     createdAt: 'created_at',

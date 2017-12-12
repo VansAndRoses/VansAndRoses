@@ -10,6 +10,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { NewTripComponent } from './new-trip/new-trip.component';
 import { NewItinerationComponent } from './new-itineration/new-itineration.component';
 import { HomeItinerationComponent } from './home-itineration/home-itineration.component';
+import { NewReviewComponent } from './new-review/new-review.component';
 
 import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 
@@ -23,6 +24,7 @@ export const routes: Routes = [
        ]
    },
   { path: 'new-trips', component: NewTripComponent},
+  { path: 'new-review/:id', component: NewReviewComponent},
   { path: 'new-itineration/:id', component: NewItinerationComponent},
   { path: 'single/:id', component: HomeTripsIdComponent},
   { path: 'home-itineration', component: HomeItinerationComponent},

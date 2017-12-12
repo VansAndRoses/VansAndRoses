@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 import { environment }  from '../../environments/environment';
-const  BASE_URL = 'http://localhost:3000/';
+const  BASE_URL = 'http://localhost:3000';
 
 @Injectable()
 export class ReviewService {
@@ -16,12 +16,12 @@ export class ReviewService {
   }
 
   newReviewGet(id){
-    return this.http.get(`${BASE_URL}/api/review/${id}/new`, this.options)
+    return this.http.get(`${BASE_URL}/review/${id}/new`, this.options)
     .map(res => res.json());
   }
 
-  newReviewPost(id) {
-    return this.http.post(`${BASE_URL}/api/review/${id}/new`,this.options)
+  newReviewPost(review, id) {
+    return this.http.post(`${BASE_URL}/review/${id}/new`, review, this.options)
       .map(res => res.json())
   }
 }

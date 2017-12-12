@@ -1,3 +1,17 @@
 <p>
   new-review works!
 </p>
+<h1>
+New Review
+</h1>
+<form (ngSubmit)="newReviewPost(myForm)" #myForm="ngForm">
+  <p> Rating:
+    <br>
+    <input type="number" name="rating" [(ngModel)]="rating" required />
+  </p>
+  <p> Comment:
+    <br>
+    <input type="text" name="description" [(ngModel)]="description" required />
+  </p>
+<button type="submit"> New review </button>
+</form>

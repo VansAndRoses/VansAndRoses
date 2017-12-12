@@ -20,8 +20,14 @@ const tripSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  average: 0,
-  quantityReviews: 0,
+  average:{
+    type: Number,
+    default:0
+  },
+  quantityReviews: {
+    type: Number,
+    default:0
+  },
   duration: Number,
   location: String,
   locationOfStart: {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ItinerationService } from '../services/itineration.service';
+import { ReviewService } from '../services/review.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,22 +8,29 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./new-review.component.css']
 })
 export class NewReviewComponent implements OnInit {
-
-  constructor() { }
+  review:any;
+  constructor(private newReviewService : ReviewService, private route: ActivatedRoute, public router:Router) { }
 
   ngOnInit() {
   }
-  //
-  // tripform (data) {
-  //   console.log("lo que envio a mi servicio")
-  //   console.log(data.value)
-  //   this.newTripService.newTrip(data.value)
-  //     .subscribe(trips => {
-  //       this.router.navigate(['/new-itineration',trips.id]);
-  //       console.log(trips.id)
-  //       console.log(trips)
-  //     })
-  //
-  // }
+
+  newReviewPost (data) {
+    console.log("lo que envio a mi servicio")
+    console.log(data.value)
+    this.route.params
+      .subscribe((params) => {
+        console.log("parametro de viaje")
+        console.log('-----',params,params.id);
+    this.newReviewService.newReviewPost(data.value, params.id)
+      .subscribe(review => {
+        this.review = review
+        this.router.navigate(['/single',params.id]);
+        console.log(review.id)
+        console.log(review)
+      });
+    })
+  }
+
+
 
 }

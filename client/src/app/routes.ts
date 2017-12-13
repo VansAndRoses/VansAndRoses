@@ -12,6 +12,8 @@ import { NewItinerationComponent } from './new-itineration/new-itineration.compo
 import { HomeItinerationComponent } from './home-itineration/home-itineration.component';
 import { NewReviewComponent } from './new-review/new-review.component';
 import { UserIdComponent } from './user-id/user-id.component';
+import { NewMessageComponent } from './new-message/new-message.component';
+import { MyMessagesComponent } from './my-messages/my-messages.component';
 
 import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 
@@ -27,6 +29,8 @@ export const routes: Routes = [
   { path: 'user/profile/:id', component: UserIdComponent},
   { path: 'new-trips', component: NewTripComponent},
   { path: 'new-review/:id', component: NewReviewComponent},
+  { path: 'new-message/:id', component: NewMessageComponent},
+  { path: 'my-messages', component: MyMessagesComponent},
   { path: 'new-itineration/:id', component: NewItinerationComponent},
   { path: 'single/:id', component: HomeTripsIdComponent},
   { path: 'home-itineration', component: HomeItinerationComponent},

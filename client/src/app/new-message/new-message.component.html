@@ -1,3 +1,17 @@
 <p>
   new-message works!
 </p>
+<h1>
+New Message
+</h1>
+<form (ngSubmit)="newMessagePost(myForm)" #myForm="ngForm">
+  <p> To:
+    <br>
+    <input type="text" name="to" [(ngModel)]="to" required />
+  </p>
+  <p> Text:
+    <br>
+    <input type="text" name="text" [(ngModel)]="text" required />
+  </p>
+<button type="submit"> New message </button>
+</form>

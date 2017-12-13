@@ -11,13 +11,8 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 })
 export class NewReviewComponent implements OnInit {
   review:any;
-  private headers = new Headers({ 'Content-type' : 'application/json' });
-  private options = new RequestOptions ({headers: this.headers, withCredentials:true });
 
   constructor(private newReviewService : ReviewService, private route: ActivatedRoute, public router:Router) { }
-
-
-
 
   ngOnInit() {
   }

@@ -29,6 +29,7 @@ import { NewReviewComponent } from './new-review/new-review.component';
 import { SearchPipePipe } from './search-pipe.pipe';
 import { AgmCoreModule } from '@agm/core';
 import { NewMessageComponent } from './new-message/new-message.component';
+import { MyMessagesComponent } from './my-messages/my-messages.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { NewMessageComponent } from './new-message/new-message.component';
     NewReviewComponent,
     SearchPipePipe,
     NewMessageComponent,
+    MyMessagesComponent,
   ],
   imports: [
     BrowserModule,

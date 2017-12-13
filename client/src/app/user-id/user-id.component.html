@@ -1,3 +1,21 @@
-<p>
-  user-id works!
-</p>
+<div *ngIf="user">
+<h1>{{ user.username }}</h1>
+<p>{{ user.name }}</p>
+<p>{{ user.lastname }}</p>
+<p>{{ user.email }}</p>
+<p>{{ user.typeOfVan }}</p>
+
+ <div class="" *ngFor="let trip of myTrips">
+  <p>{{trip.title}}</p>
+  <p>{{trip.category}}</p>
+  <p>{{trip.description}}</p>
+  <p>{{trip.duration}}</p>
+  <p>{{trip.location}}</p>
+  <p>{{trip.locationOfStart}}</p>
+  <p>{{trip.locationOfEnd}}</p>
+  <p>{{trip.average}}</p>
+  <p>{{trip.quantityReviews}}</p>
+  <p>{{trip.duration}}</p>
+
+</div>
+</div>

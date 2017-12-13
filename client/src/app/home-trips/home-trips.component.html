@@ -24,5 +24,6 @@ Viajes
   <p>Categoría: {{e.category}} </p>
   <p>Localización: {{e.location}} </p>
   <p>Localización de Salida: {{e.locationOfStart}}</p>
-    <p>Localización de llegada: {{e.locationOfEnd}}</p><br><br>
+    <p>Localización de llegada: {{e.locationOfEnd}}</p>
+    <button [routerLink]="['/user', 'profile', e.creator._id]">Creador: {{e.creator.username}}</button>
 </div>

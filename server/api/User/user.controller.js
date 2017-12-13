@@ -9,10 +9,15 @@ exports.profileGet = function(req, res, next){
 },
 
 exports.profileIdGet = function(req, res, next){
-  userModel.findById(req.params.id)
+  id = req.params.id;
+  userModel.findById(id)
   .then(result1 => {
-    tripModel.find({creator: result1._id})
-      .then(result2 => {res.status(200).json({user: result1, trip: result2});});
+    console.log(result1)
+    tripModel.find({"creator": result1._id})
+      .then(result2 => {
+        console.log(result2)
+        res.status(200).json({user: result1, trip: result2});
+      });
   })
 .reject(err => { res.status(500).json(err);});
 },

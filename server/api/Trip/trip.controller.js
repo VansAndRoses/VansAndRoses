@@ -6,6 +6,7 @@ const userModel = require('../User/User.model');
 //Get trips
 exports.getAllList = function (req,res,next){
   tripModel.find()
+  .populate("creator")
   .then( tripList => {res.status(200).json(tripList);})
   .reject(err => { res.status(500).json(err);});
 };

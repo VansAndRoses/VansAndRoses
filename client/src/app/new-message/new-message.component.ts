@@ -9,10 +9,10 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
   styleUrls: ['./new-message.component.css']
 })
 export class NewMessageComponent implements OnInit {
-  review:any;
+  message:any;
   private headers = new Headers({ 'Content-type' : 'application/json' });
   private options = new RequestOptions ({headers: this.headers, withCredentials:true });
-  
+
   constructor(private newMessageService : MessageService, private route: ActivatedRoute, public router:Router) { }
 
   ngOnInit() {
@@ -25,11 +25,11 @@ export class NewMessageComponent implements OnInit {
         console.log("parametro de viaje")
         console.log('-----',params,params.id);
     this.newMessageService.newMessagePost(data.value, params.id)
-      .subscribe(review => {
+      .subscribe(message => {
         this.message = message
         this.router.navigate(['/single',params.id]);
-        console.log(review.id)
-        console.log(review)
+        console.log(message.id)
+        console.log(message)
       });
     })
   }

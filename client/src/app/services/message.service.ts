@@ -20,8 +20,8 @@ export class MessageService {
     .map(res => res.json());
   }
 
-  newMessagePost(id) {
-    return this.http.post(`${BASE_URL}/api/message/${id}/new`,this.options)
+  newMessagePost(message, id) {
+    return this.http.post(`${BASE_URL}/api/message/${id}/new`,message, this.options)
       .map(res => res.json())
   }
 }

@@ -3,7 +3,7 @@ const userModel = require('../User/User.model');
 
 
   exports.messageGet = function(req, res, next){
-    Message.find({to:req.user._id})
+    messageModel.find({to:req.user._id})
       .populate('from')
       .then(result => {res.status(200).json(result);})
       .reject(err => { res.status(500).json(err);});
@@ -12,16 +12,17 @@ const userModel = require('../User/User.model');
   exports.newMessageGet = function(req, res, next){
     console.log("8=======D ----- 3  ");
     console.log(req.params.id);
-    User.findById(req.params.id)
+    userModel.findById(req.params.id)
     .then(result => {res.status(200).json(result);})
     .reject(err => { res.status(500).json(err);});
   };
 
   exports.newMessagePost = function(req, res, next){
+    console.log("entrando");
       const newMessage = new Message({
         from: req.user._id,
         to: req.params.id,
-        text: req.body.text,
+        text: req.body.text
       });
       console.log(newMessage);
       newMessage.save()

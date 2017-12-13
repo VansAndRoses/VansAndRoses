@@ -27,7 +27,8 @@ import { NewItinerationComponent } from './new-itineration/new-itineration.compo
 import { HomeItinerationComponent } from './home-itineration/home-itineration.component';
 import { NewReviewComponent } from './new-review/new-review.component';
 import { SearchPipePipe } from './search-pipe.pipe';
-
+import { AgmCoreModule } from '@agm/core';
+import { NewMessageComponent } from './new-message/new-message.component';
 
 
 @NgModule({
@@ -47,12 +48,16 @@ import { SearchPipePipe } from './search-pipe.pipe';
     HomeItinerationComponent,
     NewReviewComponent,
     SearchPipePipe,
+    NewMessageComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB5J2TVaB_Ez_NK5ZISeomvNMfePMjXjOM'
+    })
   ],
   providers: [ItinerationService, TripService, AuthService, EventService, ReviewService, UserService, MessageService, IsLoggedInService],
   bootstrap: [AppComponent]

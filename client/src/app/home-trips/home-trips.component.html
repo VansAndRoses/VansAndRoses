@@ -18,7 +18,11 @@ Viajes
 <div>{{categorySearch}}</div>
 
 <div *ngFor= "let e of listTrips | searchPipe: categorySearch: locationSearch; let i = index" class="list">
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
   <h2>{{e.title}}</h2>
+  <h3>{{e.average}}</h3>
   <h4>Duration: {{e.duration}} days</h4>
   <p>Description: {{e.description}}</p>
   <p>Categoría: {{e.category}} </p>

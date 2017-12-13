@@ -3,7 +3,6 @@ const Review = require('../Review/Review.model');
 const Trip = require('../Trip/Trip.model');
 
   exports.newReviewGet = function(req, res, next){
-    console.log("8=======D ----- 3  ");
     console.log(req.params.id);
     findById(req.params.id)
     .then(result => {res.status(200).json(result);})

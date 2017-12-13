@@ -8,6 +8,9 @@ import { Routes } from '@angular/router';
   styleUrls: ['./home-trips.component.css']
 })
 export class HomeTripsComponent implements OnInit {
+  title: string = 'My first AGM project';
+  lat: number = 43.291657;
+  lng: number = -2.995438;
 listTrips:Object;
 options = ['Surf','Snow','Climbing', 'Trekking', 'Bicycle', 'Gastronomy', 'Tourism', 'Others']
 options2 = ['Andalucía','Aragón','Asturias', 'Baleares', 'Canarias', 'Cantabria', 'Castilla La Mancha', 'Cataluña', 'Extremadura', 'Galicia', 'La Rioja', 'Región de Murcia', 'Comunidad foral de Navarra', 'País Vasco', 'Comunidad Valenciana', 'Ceuta','Melilla']

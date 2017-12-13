@@ -10,7 +10,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 })
 export class NewMessageComponent implements OnInit {
   message:any;
-  
+
   constructor(private newMessageService : MessageService, private route: ActivatedRoute, public router:Router) { }
 
   ngOnInit() {

@@ -18,7 +18,11 @@ options2 = ['Andalucía','Aragón','Asturias', 'Baleares', 'Canarias', 'Cantabri
 
   ngOnInit() {
     this.listTripService.getTripList()
-      .subscribe(trips => {this.listTrips = trips})
+
+      .subscribe(trips => {
+        this.listTrips = trips;
+        console.log(trips);
+          })
   }
 
 }

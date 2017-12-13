@@ -8,6 +8,21 @@
 <p>{{ user.username }}</p>
 <p>{{ user.email }}</p>
 
+<div class="" *ngFor="let trip of myTrips">
+  <p>{{trip.title}}</p>
+  <p>{{trip.category}}</p>
+  <p>{{trip.description}}</p>
+  <p>{{trip.duration}}</p>
+  <p>{{trip.location}}</p>
+  <p>{{trip.locationOfStart}}</p>
+  <p>{{trip.locationOfEnd}}</p>
+  <p>{{trip.average}}</p>
+  <p>{{trip.quantityReviews}}</p>
+  <p>{{trip.duration}}</p>
+
+</div>
+
+
 <button [routerLink]="['/home-trips']"> Buscar viajes </button>
 <button [routerLink]="['/new-trips']"> Crear viaje </button>
 <button (click)="auth.logout().subscribe()"> logout </button>

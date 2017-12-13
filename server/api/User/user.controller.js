@@ -3,7 +3,7 @@ const tripModel = require('../Trip/Trip.model');
 
 
 exports.profileGet = function(req, res, next){
-  tripModel.find({creator: result._id})
+  tripModel.find({creator: req.user._id})
     .then(result => {res.status(200).json({result});})
     .reject(err => {res.status(500).json(err);});
 },

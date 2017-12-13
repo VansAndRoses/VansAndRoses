@@ -69,4 +69,8 @@ export class AuthService {
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);
     }
+    getUserTripList(){
+      return this.http.get(`${BASEURL}/user/myprofile`, this.options)
+      .map(res => res.json());
+}
 }

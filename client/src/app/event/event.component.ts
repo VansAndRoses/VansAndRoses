@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-event',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private route: ActivatedRoute, public router:Router) { }
 
   ngOnInit() {
   }

@@ -10,7 +10,7 @@ const userModel = require('../User/User.model');
   };
 
   exports.newMessagePost = function(req, res, next){
-    console.log("entrando");
+    console.log("entrando", req.body);
       const newMessage = new messageModel({
         from: req.user._id,
         to: req.params.id,

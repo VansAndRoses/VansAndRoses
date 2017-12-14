@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { ItinerationService } from '../services/itineration.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FileUploader} from "ng2-file-upload";
+import { FormControl } from "@angular/forms";
+import { MapsAPILoader } from '@agm/core';
+import {} from '@types/googlemaps';
 
 @Component({
   selector: 'app-new-itineration',
@@ -10,9 +13,16 @@ import { FileUploader} from "ng2-file-upload";
 })
 export class NewItinerationComponent implements OnInit {
   uploader: FileUploader;
+  public latitude: number;
+  public longitude: number;
+  public searchControl: FormControl;
+  public zoom: number;
 
-  constructor(private newItinerationService : ItinerationService, private route: ActivatedRoute,
-    private router: Router) { }
+  @ViewChild("search")
+  public searchElementRef: ElementRef;
+
+
+  constructor(private newItinerationService : ItinerationService, private route: ActivatedRoute, private router: Router, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) { }
 
   ngOnInit() {
     this.route.params
@@ -20,7 +30,7 @@ export class NewItinerationComponent implements OnInit {
            this.uploader = new FileUploader({
              url: 'http://localhost:3000/itineration/new-itineration/'+ params.id
            })
-         })
+         });     
   }
   itinerationform(data) {
 

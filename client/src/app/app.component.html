@@ -4,16 +4,17 @@
 </div>
 
 <div *ngIf="user" class="siimple-navbar siimple-navbar--teal siimple-navbar--fluid">
-  <div class="siimple-layout--left">
-    <img src="assets/vansandroseslogo-large2.png" class="siimple-navbar-title">
+  <div class="siimple-layout">
+    <img src="assets/vansandroseslogo-large2.png" class="siimple-navbar-title center">
   </div>
-  <div class="siimple-layout--right">
+</div>
+<div *ngIf="user" class="siimple-navbar center">
+  <div class="siimple-layout--center">
     <a class="siimple-navbar-link" [routerLink]="['/user/myprofile']">User Profile</a>
     <a class="siimple-navbar-link" [routerLink]="['/home-trips']">Trips</a>
     <a class="siimple-navbar-link" [routerLink]="['/my-messages']">My messages</a>
     <div (click)="auth.logout().subscribe()" class="siimple-btn siimple-btn--yellow" [routerLink]="['']">Logout</div>
   </div>
-
 </div>
 
 <router-outlet></router-outlet>

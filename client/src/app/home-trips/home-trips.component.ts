@@ -8,9 +8,32 @@ import { Routes } from '@angular/router';
   styleUrls: ['./home-trips.component.css']
 })
 export class HomeTripsComponent implements OnInit {
-  title: string = 'My first AGM project';
-  lat: number = 43.291657;
-  lng: number = -2.995438;
+  // google maps zoom level
+  zoom: number = 6;
+
+  // initial center position for the map
+  lat: number = 40.336128;
+  lng: number = -3.764483;
+
+  clickedMarker(label: string, index: number) {
+    console.log(`clicked the marker: ${label || index}`)
+  }
+
+  markers = [
+	  {
+		  lat: 40.336128,
+		  lng: -3.764483,
+		  label: 'A',
+		  draggable: true
+	  },
+	  {
+		  lat: 43.291619,
+		  lng: -2.995482,
+		  label: 'B',
+		  draggable: false
+	  }
+  ]
+
 listTrips:Object;
 options = ['Surf','Snow','Climbing', 'Trekking', 'Bicycle', 'Gastronomy', 'Tourism', 'Others']
 options2 = ['Andalucía','Aragón','Asturias', 'Baleares', 'Canarias', 'Cantabria', 'Castilla La Mancha', 'Cataluña', 'Extremadura', 'Galicia', 'La Rioja', 'Región de Murcia', 'Comunidad foral de Navarra', 'País Vasco', 'Comunidad Valenciana', 'Ceuta','Melilla']

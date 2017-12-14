@@ -1,7 +1,29 @@
 const express = require('express');
 const controller = require('./itineration.controller');
-const upload = require('../../config/multer');
 const multer = require('multer');
+const cloudinary = require('cloudinary');
+const cloudinaryStorage = require('multer-storage-cloudinary');
+
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_KEY,
+    api_secret: process.env.CLOUDINARY_SECRET
+});
+
+var storage = cloudinaryStorage({
+  cloudinary: cloudinary,
+  folder: 'folder-name',
+  allowedFormats: ['jpg', 'png'],
+  filename: function (req, file, cb) {
+  photoName = new Date().getTime();
+    cb(undefined, photoName);
+  }
+});
+
+var upload = multer({ storage: storage });
+
+
 
 var router = express.Router();
 

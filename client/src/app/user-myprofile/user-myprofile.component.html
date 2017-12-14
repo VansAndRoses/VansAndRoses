@@ -37,6 +37,8 @@
         <p>Location: {{trip.location}}</p>
         <p>Start location: {{trip.locationOfStart}}</p>
         <p>End location: {{trip.locationOfEnd}}</p>
+        <img [src]='trip.image'/>
+        <button [routerLink]="['/single', trip._id]">View Details</button>
       </div>
       <br>
       <br>

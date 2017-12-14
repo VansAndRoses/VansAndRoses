@@ -22,10 +22,7 @@ const trip = [{
       longitude: -2.995475,
       description: String
     },
-    options: {
-      animals: true,
-      kids: false
-    },
+    options: "animals",
     pic_path: "http://laanonima.s3-website-us-east-1.amazonaws.com/web/images/productos/b/0000001000/1770.jpg",
   }];
 

@@ -6,6 +6,9 @@ require('./passport/serializers');
 require('./config/express')(app);
 
 require('./routes')(app);
+app.all('/*', function (req, res) {
+   res.sendFile(__dirname + '/public/index.html');
+ });
 require('./config/error-handler')(app);
 
 module.exports = app;

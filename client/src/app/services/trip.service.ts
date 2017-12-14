@@ -7,7 +7,7 @@ import { environment }  from '../../environments/environment';
 @Injectable()
 export class TripService {
 
- BASE_URL ="http://localhost:3000/api"
+ BASE_URL = environment.BASE_URL + "/api"
 
   private headers = new Headers({ 'Content-type' : 'application/json' });
   private options = new RequestOptions ({headers: this.headers, withCredentials:true });

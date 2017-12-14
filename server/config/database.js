@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const debug = require('debug')("angularauth:"+path.basename(__filename).split('.')[0]);
 const mongoose = require('mongoose');

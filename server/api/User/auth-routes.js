@@ -5,6 +5,8 @@ const User = require('./User.model');
 const bcrypt = require('bcrypt');
 const authRoutes = express.Router();
 const debug = require('debug')("angularauth:"+path.basename(__filename).split('.')[0]);
+const multer = require('multer');
+
 
 
 /* GET home page. */
@@ -29,7 +31,8 @@ exports.signUp = function(req, res, next) {
       email,
       username,
       password: hashPass,
-      typeOfVan
+      typeOfVan,
+      image: `/uploads/${req.file.filename}`,
     });
     return theUser.save()
     .then(user =>{

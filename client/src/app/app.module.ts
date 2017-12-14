@@ -30,6 +30,8 @@ import { SearchPipePipe } from './search-pipe.pipe';
 import { AgmCoreModule } from '@agm/core';
 import { NewMessageComponent } from './new-message/new-message.component';
 import { MyMessagesComponent } from './my-messages/my-messages.component';
+import { FileUploadModule } from "ng2-file-upload";
+
 
 
 @NgModule({
@@ -56,6 +58,7 @@ import { MyMessagesComponent } from './my-messages/my-messages.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    FileUploadModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB5J2TVaB_Ez_NK5ZISeomvNMfePMjXjOM'

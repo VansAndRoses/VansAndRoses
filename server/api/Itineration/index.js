@@ -1,6 +1,7 @@
 const express = require('express');
 const controller = require('./itineration.controller');
 const upload = require('../../config/multer');
+const multer = require('multer');
 
 var router = express.Router();
 

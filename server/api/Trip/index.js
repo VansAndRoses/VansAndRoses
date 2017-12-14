@@ -3,6 +3,8 @@ const controller = require('./trip.controller');
 const router = express.Router();
 const mongoose = require('mongoose');
 const upload = require('../../config/multer');
+const multer = require('multer');
+
 
 
 router.get('/', controller.getAllList);

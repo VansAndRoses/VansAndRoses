@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth-user.service';
 import { Router } from '@angular/router';
+import { FileUploader} from "ng2-file-upload";
 
 @Component({
   selector: 'app-signup',

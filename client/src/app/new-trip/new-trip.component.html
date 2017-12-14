@@ -6,10 +6,10 @@ New Trip
     <input type="text" name="title" [(ngModel)]="title" minlength="6" />
   </p>
   <p> Descripción
-    <input type="text" name="description" [(ngModel)]="description" required />
+    <input type="text" name="description" [(ngModel)]="description"  />
   </p>
   <label> Categoría </label>
-    <select name="category" [(ngModel)]="category" required>
+    <select name="category" [(ngModel)]="category">
       <option value="Surf">Surf</option>
       <option value="Snow" >Snow</option>
       <option value="Climbing" >Climbing</option>
@@ -21,10 +21,10 @@ New Trip
     </select>
 
   <p> Duración
-    <input type="text" name="duration" [(ngModel)]="duration" required />
+    <input type="text" name="duration" [(ngModel)]="duration" />
   </p>
   <label> Localización </label>
-    <select name="location" [(ngModel)]="location" required>
+    <select name="location" [(ngModel)]="location" >
       <option value="Andalucía">Andalucía</option>
       <option value="Aragón" >Aragón</option>
       <option value="Asturias" >Asturias</option>
@@ -44,15 +44,17 @@ New Trip
       <option value="Melilla">Melilla</option>
     </select>
   <p> Localización de Salida:
-    <input type="text" name="locationOfStart" [(ngModel)]="locationOfStart" required />
+    <input type="text" name="locationOfStart" [(ngModel)]="locationOfStart" />
   </p>
   <p> Localización de Llegada:
-    <input type="text" name="locationOfEnd" [(ngModel)]="locationOfEnd" required />
+    <input type="text" name="locationOfEnd" [(ngModel)]="locationOfEnd" />
   </p>
-  <p> Opciones:
-    <input type="text" name="options" [(ngModel)]="options" required />
-  </p>
+  <label> Options </label>
+    <select name="options" [(ngModel)]="options" >
+      <option value="animals">Animals</option>
+      <option value="kids">Kids</option>
+      </select>
   <p> Photo:  </p>
-  <!-- <input type="file" name="file"  id="file" ng2FileSelect [uploader]="uploader" /> -->
+  <input type="file" name="file"  id="file" ng2FileSelect [uploader]="uploader" />
   <button type="submit"> Nuevo viaje </button>
 </form>

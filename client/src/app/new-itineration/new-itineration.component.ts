@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItinerationService } from '../services/itineration.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { FileUploader} from "ng2-file-upload";
 
 @Component({
   selector: 'app-new-itineration',

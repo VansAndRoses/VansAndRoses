@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ItinerationService } from './services/itineration.service';
 import { TripService } from './services/trip.service';
 import { AuthService } from './services/auth-user.service';
@@ -33,7 +33,6 @@ import { MyMessagesComponent } from './my-messages/my-messages.component';
 import { FileUploadModule } from "ng2-file-upload";
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,11 +56,13 @@ import { FileUploadModule } from "ng2-file-upload";
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     FileUploadModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyB5J2TVaB_Ez_NK5ZISeomvNMfePMjXjOM'
+      apiKey: 'AIzaSyB5J2TVaB_Ez_NK5ZISeomvNMfePMjXjOM',
+      libraries: ["places"]
     })
   ],
   providers: [ItinerationService, TripService, AuthService, EventService, ReviewService, UserService, MessageService, IsLoggedInService],

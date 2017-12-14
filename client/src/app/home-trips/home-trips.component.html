@@ -30,7 +30,15 @@
 
 <div *ngFor= "let e of listTrips | searchPipe: categorySearch: locationSearch; let i = index" class="list">
   <div class="siimple-box">
-  <agm-map [latitude]="lat" [longitude]="lng">
+  <agm-map [latitude]="lat"
+      [longitude]="lng"
+      [zoom]="zoom"
+      [disableDefaultUI]="false"
+      [zoomControl]="false">
+    <agm-marker *ngFor="let m of markers; let i = index"
+          [latitude]="m.lat"
+          [longitude]="m.lng"
+          [label]="m.label"></agm-marker>
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
   <h2>{{e.title}}</h2>

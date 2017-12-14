@@ -31,7 +31,7 @@ exports.signUp = function(req, res, next) {
       email,
       username,
       password: hashPass,
-      typeOfVan
+      typeOfVan,
     });
     return theUser.save()
     .then(user =>{

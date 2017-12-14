@@ -34,8 +34,8 @@ export class NewTripComponent implements OnInit {
       this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
 let a = JSON.parse(response );
 this.router.navigate(['/new-itineration',a.id])
-             };
-    }
-    }
 
-// this.router.navigate(['/new-itineration',trips.id])
+             };
+
+    }
+    }

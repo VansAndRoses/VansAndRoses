@@ -1,6 +1,7 @@
-<p>
-  home-itinerations works!
-</p>
+<div class="siimple-grid center">
+  <div class="siimple-grid-row">
+    <div class="siimple-grid-col siimple-grid-col--12">
+      <h1>Itinerary</h1>
 <div *ngFor= "let e of listItinerations">
   <h2>{{e.title}}</h2>
   <p>{{e.description}}</p>
@@ -9,4 +10,7 @@
   <p>Lugar para pernoctar: {{e.placeToSleep}}</p>
   <p>Lugar para comer: {{e.placeToEat}}</p>
   <p>Lugar para asearse: {{e.washingPlace}}</p>
+</div>
+</div>
+</div>
 </div>

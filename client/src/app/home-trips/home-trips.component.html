@@ -1,14 +1,18 @@
-<h1>
-Viajes
-</h1>
-<label for="things_name"> Search Category: </label>
-<select  [(ngModel)]="categorySearch">
+<div class="siimple-grid center">
+  <div class="siimple-grid-row">
+    <div class="siimple-grid-col siimple-grid-col--12">
+<h1>Trips</h1>
+<div class="siimple-box siimple-box--teal center">
+<label class="siimple-label" for="things_name"> Search Category: </label>
+<select class="siimple-select" [(ngModel)]="categorySearch">
   <option *ngFor="let option of options"[value]="option">
        {{ option }}
      </option>
   </select>
-<label for="things_name"> Search Location: </label>
-  <select  [(ngModel)]="locationSearch">
+  <br>
+  <br>
+<label class="siimple-label" for="things_name"> Search Location: </label>
+  <select class="siimple-select" [(ngModel)]="locationSearch">
     <option *ngFor="let option of options2"[value]="option">
          {{ option }}
        </option>
@@ -16,8 +20,12 @@ Viajes
 
 <div>{{locationSearch}}</div>
 <div>{{categorySearch}}</div>
+</div>
+<br>
+<br>
 
 <div *ngFor= "let e of listTrips | searchPipe: categorySearch: locationSearch; let i = index" class="list">
+  <div class="siimple-box">
   <agm-map [latitude]="lat" [longitude]="lng">
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
@@ -31,3 +39,11 @@ Viajes
     <p>Localización de llegada: {{e.locationOfEnd}}</p>
     <button [routerLink]="['/user', 'profile', e.creator._id]">Creador: {{e.creator.username}}</button>
 </div>
+<br>
+<br>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>

@@ -1,47 +1,31 @@
-<nav >
-  <div>
-    <a routerLink="/" class="brand-logo"><img id ="logo"src="../assets/vansandroseslogo.png" alt=""></a>
-    <ul *ngIf="!user"  class="right hide-on-med-and-down">
-
-      <li><a [routerLink]="['/login']">Log in</a></li>
-    </ul>
-    <ul *ngIf="user"  class="right hide-on-med-and-down">
-      <li><a routerLink="/user/{{user._id}}/edit"><i class="material-icons left">edit</i>Edit</a></li>
-      <li><a (click)="logout()"><i class="material-icons left">exit_to_app</i>Logout</a></li>
-    </ul>
+<div class="siimple-grid center">
+  <div class="siimple-grid-row">
+    <div class="siimple-grid-col siimple-grid-col--12">
+  <img src="../assets/vansandroseslogo3.png" id ="logo" alt="">
+  <div class="siimple-h1">Sign up</div>
+  <label class="siimple-label">Name</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.name" name="name"/>
+  <label class="siimple-label">Lastname</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.lastname" name="lastname"/>
+  <label class="siimple-label">Email</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.email" name="email"/>
+  <label class="siimple-label">Username</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.username" name="username"/>
+  <label class="siimple-label">Password</label><br>
+  <input type="password" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.password" name="password"/>
+  <label class="siimple-label">Type of van</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.typeOfVan" name="typeOfVan"/>
+  <label class="siimple-label">Location</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.location" name="location"/>
+  <br>
+  <br>
+  <div (click)="signup(formInfo)" [routerLink]="['/']" class="siimple-btn siimple-btn--yellow">Sign up</div>
+  <div *ngIf="!user"  class="right hide-on-med-and-down">
+    <br>
+    <br>
+  <p>If you are not logged in, Sign up </p>
+  <div [routerLink]="['/login']" class="siimple-btn siimple-btn--teal">Log in</div>
+</div>
   </div>
-</nav>
-
-<form >
-  <h2> Signup </h2>
-  <label> Name </label>
-  <br>
-  <input type="text" [(ngModel)]="formInfo.name" name="name"/>
-  <br>
-  <label> Lastname </label>
-  <br>
-  <input type="text" [(ngModel)]="formInfo.lastname" name="lastname"/>
-  <br>
-  <label> Email </label>
-  <br>
-  <input type="email" [(ngModel)]="formInfo.email" name="email"/>
-  <br>
-  <label> Username </label>
-  <br>
-  <input type="text" [(ngModel)]="formInfo.username" name="username"/>
-  <br>
-  <label> Password </label>
-  <br>
-  <input type="password" [(ngModel)]="formInfo.password" name="password"/>
-  <br>
-  <label> Type of van </label>
-  <br>
-  <input type="text" [(ngModel)]="formInfo.typeOfVan" name="typeOfVan"/>
-  <br>
-  <label> Location </label>
-  <br>
-  <input type="text" [(ngModel)]="formInfo.location" name="location"/>
-  <br>
-  <br>
-  <button (click)="signup(formInfo)"> signup </button>
-</form>
+</div>
+</div>

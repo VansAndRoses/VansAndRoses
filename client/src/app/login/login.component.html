@@ -1,29 +1,26 @@
-<nav>
-  <div>
-    <a routerLink="/" class="brand-logo"><img id ="logo"src="../assets/vansandroseslogo.png" alt=""></a>
-    <ul *ngIf="!user"  class="right hide-on-med-and-down">
-
-      <li><a [routerLink]="['/signup']">Sign-Up</a></li>
-    </ul>
-    <ul *ngIf="user"  class="right hide-on-med-and-down">
-      <li><a routerLink="/user/{{user._id}}/edit"><i class="material-icons left">edit</i>Edit</a></li>
-      <li><a (click)="logout()"><i class="material-icons left">exit_to_app</i>Logout</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="siimple-grid">
+<div class="siimple-grid center">
   <div class="siimple-grid-row">
-    <div class="siimple-grid-col siimple-grid-col--11">
-
-  <div class="siimple-h1">Login</div>
-  <label class="siimple-label">Username: </label><br>
+    <div class="siimple-grid-col siimple-grid-col--12">
+      <br>
+      <br>
+  <img src="../assets/vansandroseslogo3.png" id ="logo" alt="">
+  <div class="siimple-h1">Log in</div>
+  <label class="siimple-label">Username</label><br>
   <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.username" name="username"/>
-  <label class="siimple-label">Password: </label><br>
-  <input type="text" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.password" name="password"/>
+  <label class="siimple-label">Password</label><br>
+  <input type="password" class="siimple-input siimple-input--fluid" [(ngModel)]="formInfo.password" name="password"/>
   <br>
   <br>
-  <div (click)="login()" class="siimple-btn siimple-btn--teal">Login</div>
+  <div (click)="login()" class="siimple-btn siimple-btn--teal">Log in</div>
+  <div *ngIf="!user"  class="right hide-on-med-and-down">
+    <br>
+    <br>
+  <p>If you are not logged in, Sign up </p>
+  <div [routerLink]="['/signup']" class="siimple-btn siimple-btn--yellow">Sign up</div>
+  <br>
+  <br>
+  <br>
+</div>
   </div>
 </div>
 </div>

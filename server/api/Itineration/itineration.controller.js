@@ -18,11 +18,10 @@ exports.singleItineration = function(req,res,next){
 // POST
 exports.createItineration = function(req, res, next) {
   console.log('Req.params =>');
-  console.log(req.params);
+  console.log(req.params.id);
   const newItineration = new itinerationModel({
     title:       req.body.title,
     description:   req.body.description,
-    creator:       req.body.creator,
     locationOfStart:    req.body.locationOfStart,
     locationOfEnd:    req.body.locationOfEnd,
     placeToSleep:      req.body.placeToSleep,

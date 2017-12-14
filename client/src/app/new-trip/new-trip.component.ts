@@ -10,7 +10,7 @@ import { FileUploader} from "ng2-file-upload";
 })
 export class NewTripComponent implements OnInit {
   uploader: FileUploader = new FileUploader({
-      url: 'http://localhost:3000/api/trip/new-trips/'
+      url: 'http://localhost:3000/trip/new-trips/'
     });
 
   constructor(private newTripService : TripService, public router:Router) { }

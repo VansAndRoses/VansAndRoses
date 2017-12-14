@@ -1,4 +1,4 @@
-<div *ngIf= "compTrip">
+<div *ngIf= "compTrip.trip">
         <h1>{{compTrip.trip.title}}</h1>
         <h1>{{compTrip.trip.average}}</h1>
         <p>{{compTrip.trip.description}}</p>
@@ -8,6 +8,7 @@
         <p>{{compTrip.trip.locationOfStart}}</p>
         <p>{{compTrip.trip.locationOfEnd}}</p>
         <p>{{compTrip.trip.options}}</p>
+        <img [src]="'http://localhost:3000/public'+compTrip.trip.image" height=100/>
       <div>
         <div *ngFor= "let e of compTrip.trip.itinerations">
             <p> Title: {{e.title}}</p>
@@ -16,10 +17,12 @@
             <p> Localización de llegada: {{e.locationOfEnd}}</p>
             <p> Lugar para dormir: {{e.placeToSleep}}</p>
             <p> Lugar para comer: {{e.placeToEat}}</p>
+            <p> Lugar para asearse: {{e.washingPlace}}</p>
             <p> Lugar para asearse: {{e.washingPlace}}</p><br><br>
+            <img [src]="'http://localhost:3000/public'+e.image" height=100/>
           </div>
         </div>
-        <div *ngFor= "let e of compTrip.reviews">
+        <div *ngFor= "let e of compTrip.trip.reviews">
             <p> From: {{e.from}}</p>
             <p> Rating: {{e.rating}}</p>
             <p> Text: {{e.text}}</p>

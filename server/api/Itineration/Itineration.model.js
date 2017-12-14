@@ -8,10 +8,6 @@ const itinerationSchema = new Schema({
   description: {
     type: String
   },
-  creator: {
-    type: Schema.Types.ObjectId,
-    ref: 'Trip'
-  },
   locationOfStart: {
     latitude: Number,
     longitude: Number,

@@ -32,7 +32,6 @@ exports.signUp = function(req, res, next) {
       username,
       password: hashPass,
       typeOfVan,
-      image: `/uploads/${req.file.filename}`,
     });
     return theUser.save()
     .then(user =>{

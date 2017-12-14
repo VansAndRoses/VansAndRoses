@@ -12,10 +12,10 @@ exports.profileIdGet = function(req, res, next){
   id = req.params.id;
   userModel.findById(id)
   .then(result1 => {
-    console.log(result1)
+    console.log(result1);
     tripModel.find({"creator": result1._id})
       .then(result2 => {
-        console.log(result2)
+        console.log(result2);
         res.status(200).json({user: result1, trip: result2});
       });
   })

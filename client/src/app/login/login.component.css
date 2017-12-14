@@ -1,7 +1,5 @@
-body {
-  text-align: center;
-}
-.brand-logo{
-  margin: 0 auto;
-  height: auto;
-}
+.center {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+};

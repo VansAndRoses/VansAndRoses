@@ -1,5 +1,13 @@
-<h1>My messages</h1>
-<div *ngFor= "let e of listMessages">
-  <h2>From: {{e.from}}</h2>
-  <p>Text: {{e.text}}</p>
+<br><br><br>
+<div class="siimple-box center">
+  <div class="siimple-box-title">My messages</div>
+  <div *ngFor= "let e of listMessages">
+    <div class="siimple-box siimple-box--navy center">
+    <h2>From: {{e.from.username}}</h2>
+    <p>Text: {{e.text}}</p>
+  </div>
+  <br>
+  <br>
+  </div>
 </div>
+<br><br><br>

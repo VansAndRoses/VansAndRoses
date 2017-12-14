@@ -1,16 +1,18 @@
-<h1>
-New Trip
-</h1>
+<div class="siimple-grid center">
+  <div class="siimple-grid-row">
+    <div class="siimple-grid-col siimple-grid-col--12">
+<h1>New Trip</h1>
+
 <form (ngSubmit)="tripform(myForm)" #myForm="ngForm">
-  <p> Título
-    <input type="text" name="title" [(ngModel)]="title" minlength="6" />
-  </p>
-  <p> Descripción
-    <input type="text" name="description" [(ngModel)]="description"  />
-  </p>
-  <label> Categoría </label>
-    <select name="category" [(ngModel)]="category">
-      <option value="Surf">Surf</option>
+  <label class="siimple-label">Title:</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" name="title" [(ngModel)]="title" minlength="6" />
+
+  <label class="siimple-label">Description:</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" name="description" [(ngModel)]="description" required />
+
+  <label class="siimple-label">Category:</label><br>
+    <select name="category" class="siimple-select siimple-select--fluid" [(ngModel)]="category" required>
+      <option selected value="Surf">Surf</option>
       <option value="Snow" >Snow</option>
       <option value="Climbing" >Climbing</option>
       <option value="Trekking" >Trekking</option>
@@ -20,12 +22,12 @@ New Trip
       <option value="Others">Others</option>
     </select>
 
-  <p> Duración
-    <input type="text" name="duration" [(ngModel)]="duration" />
-  </p>
-  <label> Localización </label>
-    <select name="location" [(ngModel)]="location" >
-      <option value="Andalucía">Andalucía</option>
+  <label class="siimple-label">Duration days:</label><br>
+  <input type="number" class="siimple-input siimple-input--fluid" name="duration" [(ngModel)]="duration" required />
+
+  <label class="siimple-label"> Location: </label>
+    <select name="location" class="siimple-select siimple-select--fluid" [(ngModel)]="location" required>
+      <option selected value="Andalucía">Andalucía</option>
       <option value="Aragón" >Aragón</option>
       <option value="Asturias" >Asturias</option>
       <option value="Baleares" >Baleares</option>
@@ -43,18 +45,41 @@ New Trip
       <option value="Ceuta">Ceuta</option>
       <option value="Melilla">Melilla</option>
     </select>
-  <p> Localización de Salida:
-    <input type="text" name="locationOfStart" [(ngModel)]="locationOfStart" />
-  </p>
-  <p> Localización de Llegada:
-    <input type="text" name="locationOfEnd" [(ngModel)]="locationOfEnd" />
-  </p>
+
+  <label class="siimple-label">Start location:</label><br>
+  <input type="number" class="siimple-input siimple-input--fluid" name="locationOfStart" [(ngModel)]="locationOfStart" required />
+
+  <label class="siimple-label">End location:</label><br>
+  <input type="number" class="siimple-input siimple-input--fluid" name="locationOfEnd" [(ngModel)]="locationOfEnd" required />
+
+  <label class="siimple-label">Photo:</label><br>
+  <input type="file" class="siimple-input siimple-input--fluid" name="file"  id="file" ng2FileSelect [uploader]="uploader" />
+  <!-- <input type="file" name="file"  id="file" ng2FileSelect [uploader]="uploader" /> -->
   <label> Options </label>
     <select name="options" [(ngModel)]="options" >
       <option value="animals">Animals</option>
       <option value="kids">Kids</option>
       </select>
-  <p> Photo:  </p>
-  <input type="file" name="file"  id="file" ng2FileSelect [uploader]="uploader" />
-  <button type="submit"> Nuevo viaje </button>
+
+  <!-- <label class="siimple-label">Animals:</label>
+<div class="siimple-checkbox">
+  <input type="checkbox" id="animals" checked>
+  <label for="animals"></label>
+</div>
+<br>
+
+<label class="siimple-label">Kids:</label>
+<div class="siimple-checkbox">
+<input type="checkbox" id="kids" checked>
+<label for="kids"></label>
+</div>
+<br> -->
+  <br>
+  <button type="submit" class="siimple-btn siimple-btn--teal"> New trip </button>
+  <br>
+  <br>
+  <br>
 </form>
+</div>
+</div>
+</div>

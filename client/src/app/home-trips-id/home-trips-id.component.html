@@ -1,34 +1,56 @@
-<div *ngIf= "compTrip.trip">
+<div class="siimple-grid center">
+  <div class="siimple-grid-row">
+    <div class="siimple-grid-col siimple-grid-col--12">
+<div *ngIf= "compTrip">
         <h1>{{compTrip.trip.title}}</h1>
-        <h1>{{compTrip.trip.average}}</h1>
+        <h1>Rating: {{compTrip.trip.average}}</h1>
         <p>{{compTrip.trip.description}}</p>
-        <p>{{compTrip.trip.category}}</p>
-        <p>{{compTrip.trip.duration}}</p>
-        <p>{{compTrip.trip.location}}</p>
-        <p>{{compTrip.trip.locationOfStart}}</p>
-        <p>{{compTrip.trip.locationOfEnd}}</p>
-        <p>{{compTrip.trip.options}}</p>
-        <img [src]="'http://localhost:3000/public'+compTrip.trip.image" height=100/>
+        <p>Category: {{compTrip.trip.category}}</p>
+        <p>Duration: {{compTrip.trip.duration}} days</p>
+        <p>Location: {{compTrip.trip.location}}</p>
+        <p>Start location: {{compTrip.trip.locationOfStart}}</p>
+        <p>Finish location: {{compTrip.trip.locationOfEnd}}</p>
+        <p>With: {{compTrip.trip.options}}</p>
       <div>
+        <div class="siimple-box">
+          <h1>Itineraries</h1>
         <div *ngFor= "let e of compTrip.trip.itinerations">
-            <p> Title: {{e.title}}</p>
+          <div class="siimple-box siimple-box--navy center">
+          <h2>{{e.title}}</h2>
             <p> Description: {{e.description}}</p>
-            <p> Localización de Salida: {{e.locationOfStart}}</p>
-            <p> Localización de llegada: {{e.locationOfEnd}}</p>
-            <p> Lugar para dormir: {{e.placeToSleep}}</p>
-            <p> Lugar para comer: {{e.placeToEat}}</p>
-            <p> Lugar para asearse: {{e.washingPlace}}</p>
-            <p> Lugar para asearse: {{e.washingPlace}}</p><br><br>
-            <img [src]="'http://localhost:3000/public'+e.image" height=100/>
+            <p> Start location: {{e.locationOfStart}}</p>
+            <p> Finish location: {{e.locationOfEnd}}</p>
+            <p> Sleep location: {{e.placeToSleep}}</p>
+            <p> Eat location: {{e.placeToEat}}</p>
+            <p> Washing location: {{e.washingPlace}}</p><br><br>
           </div>
+          <br>
+          <br>
         </div>
-        <div *ngFor= "let e of compTrip.trip.reviews">
+        </div>
+      </div>
+      <br>
+      <div class="siimple-box siimple-box--navy">
+        <h1>Reviews</h1>
+        <div *ngFor= "let e of compTrip.reviews">
+          <div class="siimple-box center">
             <p> From: {{e.from}}</p>
             <p> Rating: {{e.rating}}</p>
             <p> Text: {{e.text}}</p>
           </div>
+          <br>
+          <br>
+          </div>
         </div>
+      </div>
 <br>
-<button [routerLink]="['/new-review', compTrip.trip._id]">Go to new review</button>
+<button class="siimple-btn siimple-btn--yellow" [routerLink]="['/new-itineration', compTrip.trip._id]">Add new itinerary</button>
+<br>
+<br>
+<br>
+<button class="siimple-btn siimple-btn--teal" [routerLink]="['/new-review', compTrip.trip._id]">Go to new review</button>
+</div>
+</div>
+</div>
 <br>
 <br>

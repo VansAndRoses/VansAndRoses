@@ -1,30 +1,39 @@
-<h1>
-Itineration
-</h1>
+<div class="siimple-grid center">
+  <div class="siimple-grid-row">
+    <div class="siimple-grid-col siimple-grid-col--12">
+<h1>Itinerary</h1>
 <form (ngSubmit)="itinerationform(myForm)" #myForm="ngForm">
-  <p> Title:
-    <input type="text" name="title" [(ngModel)]="title" minlength="6" />
-  </p>
-  <p> Description:
-    <input type="text" name="description" [(ngModel)]="description" required />
-  </p>
-  <p> Localtion of Start:
-    <input type="text" name="locationOfStart" [(ngModel)]="locationOfStart" required />
-  </p>
-  <p> Location of End:
-    <input type="text" name="locationOfEnd" [(ngModel)]="locationOfEnd" required />
-  </p>
-  <p> Place to Sleep:
-    <input type="text" name="placeToSleep" [(ngModel)]="placeToSleep" required />
-  </p>
-  <p> Place to Eat:
-    <input type="text" name="placeToEat" [(ngModel)]="placeToEat" required />
-  </p>
-  <p> Washing Place:
-    <input type="text" name="washingPlace" [(ngModel)]="washingPlace" required />
-  </p>
-  <p> Photo:  </p>
-  <input type="file" name="file"  id="file" ng2FileSelect [uploader]="uploader" />
+  <label class="siimple-label">Title:</label><br>
+  <input type="text" name="title" class="siimple-input siimple-input--fluid" [(ngModel)]="title" minlength="6" />
 
-  <button type="submit"> Nuevo viaje </button>
+  <label class="siimple-label">Description:</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" name="description" [(ngModel)]="description" required />
+
+  <label class="siimple-label">Location of Start:</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" name="locationOfStart" [(ngModel)]="locationOfStart" required />
+
+  <label class="siimple-label">Location of End:</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" name="locationOfEnd" [(ngModel)]="locationOfEnd" required />
+
+  <label class="siimple-label">Place to Sleep:</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" name="placeToSleep" [(ngModel)]="placeToSleep" required />
+
+  <label class="siimple-label">Place to Eat:</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" name="placeToEat" [(ngModel)]="placeToEat" required />
+
+  <label class="siimple-label">Washing Place:</label><br>
+  <input type="text" class="siimple-input siimple-input--fluid" name="washingPlace" [(ngModel)]="washingPlace" required />
+
+  <label class="siimple-label">Photo:</label><br>
+  <input type="file" class="siimple-input siimple-input--fluid" name="file"  id="file" ng2FileSelect [uploader]="uploader" />
+  <br>
+  <br>
+  <br>
+  <button type="submit" class="siimple-btn siimple-btn--teal">New itinerary</button>
+  <br>
+  <br>
+  <br>
 </form>
+</div>
+</div>
+</div>

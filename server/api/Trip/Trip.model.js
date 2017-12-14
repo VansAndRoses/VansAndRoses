@@ -34,10 +34,8 @@ const tripSchema = new Schema({
     longitude: Number
   },
 
-  options: {
-    animals: Boolean,
-    kids: Boolean
-  },
+  options : String,
+  
   image: {
    type: String, default: ''
  },

@@ -13,6 +13,9 @@ const userSchema = new Schema({
       latitude: Number,
       longitude: Number
     },
+    image: {
+     type: String, default: ''
+   },
   }, {
   timestamps: {
     createdAt: 'created_at',

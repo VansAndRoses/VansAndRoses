@@ -53,21 +53,27 @@
   <input type="number" class="siimple-input siimple-input--fluid" name="locationOfEnd" [(ngModel)]="locationOfEnd" required />
 
   <label class="siimple-label">Photo:</label><br>
-  <input type="text" class="siimple-input siimple-input--fluid" name="photo" [(ngModel)]="photo" />
+  <input type="file" class="siimple-input siimple-input--fluid" name="file"  id="file" ng2FileSelect [uploader]="uploader" />
   <!-- <input type="file" name="file"  id="file" ng2FileSelect [uploader]="uploader" /> -->
+  <label> Options </label>
+    <select name="options" [(ngModel)]="options" >
+      <option value="animals">Animals</option>
+      <option value="kids">Kids</option>
+      </select>
 
-  <label class="siimple-label">Animals:</label>
+  <!-- <label class="siimple-label">Animals:</label>
 <div class="siimple-checkbox">
   <input type="checkbox" id="animals" checked>
   <label for="animals"></label>
 </div>
 <br>
+
 <label class="siimple-label">Kids:</label>
 <div class="siimple-checkbox">
 <input type="checkbox" id="kids" checked>
 <label for="kids"></label>
 </div>
-<br>
+<br> -->
   <br>
   <button type="submit" class="siimple-btn siimple-btn--teal"> New trip </button>
   <br>

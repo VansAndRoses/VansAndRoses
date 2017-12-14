@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 import {environment} from '../../environments/environment';
 
 const BASEURL = 'http://localhost:3000' + "/auth";

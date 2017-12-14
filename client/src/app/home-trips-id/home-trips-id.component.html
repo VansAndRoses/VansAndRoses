@@ -6,11 +6,11 @@
         <h1>Rating: {{compTrip.trip.average}}</h1>
         <p>{{compTrip.trip.description}}</p>
         <p>Category: {{compTrip.trip.category}}</p>
-        <p>{{compTrip.trip.duration}}</p>
+        <p>Duration: {{compTrip.trip.duration}} days</p>
         <p>Location: {{compTrip.trip.location}}</p>
-        <p>{{compTrip.trip.locationOfStart}}</p>
-        <p>{{compTrip.trip.locationOfEnd}}</p>
-        <p>{{compTrip.trip.options}}</p>
+        <p>Start location: {{compTrip.trip.locationOfStart}}</p>
+        <p>Finish location: {{compTrip.trip.locationOfEnd}}</p>
+        <p>With: {{compTrip.trip.options}}</p>
       <div>
         <div class="siimple-box">
           <h1>Itineraries</h1>
@@ -18,11 +18,11 @@
           <div class="siimple-box siimple-box--navy center">
           <h2>{{e.title}}</h2>
             <p> Description: {{e.description}}</p>
-            <p> Localización de Salida: {{e.locationOfStart}}</p>
-            <p> Localización de llegada: {{e.locationOfEnd}}</p>
-            <p> Lugar para dormir: {{e.placeToSleep}}</p>
-            <p> Lugar para comer: {{e.placeToEat}}</p>
-            <p> Lugar para asearse: {{e.washingPlace}}</p><br><br>
+            <p> Start location: {{e.locationOfStart}}</p>
+            <p> Finish location: {{e.locationOfEnd}}</p>
+            <p> Sleep location: {{e.placeToSleep}}</p>
+            <p> Eat location: {{e.placeToEat}}</p>
+            <p> Washing location: {{e.washingPlace}}</p><br><br>
           </div>
           <br>
           <br>

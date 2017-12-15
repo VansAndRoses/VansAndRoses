@@ -11,6 +11,7 @@ const debug = require('debug')("angularauth:"+path.basename(__filename).split('.
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+
 module.exports = function (app){
 require('./database');
 var whitelist = [

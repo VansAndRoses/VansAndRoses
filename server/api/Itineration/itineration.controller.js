@@ -1,6 +1,6 @@
-mongoose = require('mongoose');
-itinerationModel = require('./itineration.model');
-tripModel = require('../Trip/Trip.model');
+const mongoose = require('mongoose');
+const itinerationModel = require('./itineration.model');
+const tripModel = require('../Trip/Trip.model');
 
 //Get Plates
 exports.getAllItineration = function (req,res,next){

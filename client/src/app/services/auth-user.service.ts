@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import {environment} from '../../environments/environment';
 
-const BASEURL = environment.BASE_URL + "/auth";
+const BASEURL = environment.BASE_URL + "/api/user";
 
 @Injectable()
 export class AuthService {

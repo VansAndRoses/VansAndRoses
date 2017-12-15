@@ -15,22 +15,22 @@ export class UserService {
   }
 
   profileGet(){
-    return this.http.get(`${BASE_URL}/user/profile`, this.options)
+    return this.http.get(`${BASE_URL}/api/user/profile`, this.options)
     .map(res => res.json());
   }
 
   profileIdGet(id) {
-    return this.http.get(`${BASE_URL}/user/profile/${id}`,this.options)
+    return this.http.get(`${BASE_URL}/api/user/profile/${id}`,this.options)
       .map(res => res.json())
   }
 
   editGet(id) {
-    return this.http.get(`${BASE_URL}/user/${id}/edituser`,this.options)
+    return this.http.get(`${BASE_URL}/api/user/${id}/edituser`,this.options)
       .map(res => res.json())
   }
 
 editPost(id) {
-    return this.http.post(`${BASE_URL}/user/${id}/edituser`,this.options)
+    return this.http.post(`${BASE_URL}/api/user/${id}/edituser`,this.options)
       .map(res => res.json())
   }
 }

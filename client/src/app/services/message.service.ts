@@ -17,12 +17,12 @@ export class MessageService {
   }
 
   messageGet(){
-    return this.http.get(`${BASE_URL}/message/`, this.options)
+    return this.http.get(`${BASE_URL}/api/message/`, this.options)
     .map(res => res.json());
   }
 
   newMessagePost(message, id) {
-    return this.http.post(`${BASE_URL}/message/${id}/new`, message, this.options)
+    return this.http.post(`${BASE_URL}/api/message/${id}/new`, message, this.options)
       .map(res => res.json())
   }
 }

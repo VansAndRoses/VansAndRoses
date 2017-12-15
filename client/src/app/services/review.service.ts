@@ -16,12 +16,12 @@ export class ReviewService {
   }
 
   newReviewGet(id){
-    return this.http.get(`${BASE_URL}/review/${id}/new`, this.options)
+    return this.http.get(`${BASE_URL}/api/review/${id}/new`, this.options)
     .map(res => res.json());
   }
 
   newReviewPost(review, id) {
-    return this.http.post(`${BASE_URL}/review/${id}/new`, review, this.options)
+    return this.http.post(`${BASE_URL}/api/review/${id}/new`, review, this.options)
       .map(res => res.json())
   }
 }

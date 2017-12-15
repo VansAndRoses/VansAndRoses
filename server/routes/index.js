@@ -7,7 +7,5 @@ module.exports = function(app) {
   app.use('/api/trip', require('../api/Trip/index'));
   app.use('/api/event', require('../api/Event'));
     // catch 404 and forward to Angular
-  app.all('/*', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html');
-  });
+
 };

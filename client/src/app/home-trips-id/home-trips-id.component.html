@@ -11,6 +11,8 @@
         <p>Start location: {{compTrip.trip.locationOfStart}}</p>
         <p>Finish location: {{compTrip.trip.locationOfEnd}}</p>
         <p>With: {{compTrip.trip.options}}</p>
+        <img [src]='compTrip.trip.image'/>
+
       <div>
         <div class="siimple-box">
           <h1>Itineraries</h1>
@@ -22,7 +24,8 @@
             <p> Finish location: {{e.locationOfEnd}}</p>
             <p> Sleep location: {{e.placeToSleep}}</p>
             <p> Eat location: {{e.placeToEat}}</p>
-            <p> Washing location: {{e.washingPlace}}</p><br><br>
+            <p> Washing location: {{e.washingPlace}}</p>
+            <img [src]='e.image'/><br><br>
           </div>
           <br>
           <br>

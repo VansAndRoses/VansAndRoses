@@ -38,7 +38,7 @@ exports.createTrip = function(req, res, next) {
     creator: req.user._id,
     category: req.body.category,
     duration: req.body.duration,
-    image: `/uploads/${req.file.filename}`,
+    image: req.file.url,
     location: req.body.location,
     locationOfStart: req.body.locationOfStart,
     locationOfEnd: req.body.locationOfEnd,

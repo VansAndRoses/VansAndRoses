@@ -1,8 +1,7 @@
 <h1>New Message</h1>
 <form (ngSubmit)="newMessagePost(myForm)" #myForm="ngForm">
-  <p> To: {{user.username}} </p>
   <label class="siimple-label">Your message: </label><br>
-  <textarea class="siimple-textarea siimple-textarea--fluid" name="text" rows="5">
+  <textarea class="siimple-textarea siimple-textarea--fluid" name='msgText' [(ngModel)]="msgText" rows="5">
   </textarea>
 <button type="submit" class="siimple-btn siimple-btn--teal"> New message </button>
 </form>

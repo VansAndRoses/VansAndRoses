@@ -10,7 +10,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 })
 export class NewMessageComponent implements OnInit {
   message:any;
-
+  msgText = '';
   constructor(private newMessageService : MessageService, private route: ActivatedRoute, public router:Router) { }
 
   ngOnInit() {
@@ -18,6 +18,7 @@ export class NewMessageComponent implements OnInit {
   newMessagePost (data) {
     console.log("lo que envio a mi servicio")
     console.log(data.value)
+    console.log(this.msgText)
     this.route.params
       .subscribe((params) => {
         console.log("parametro de viaje")
@@ -25,7 +26,7 @@ export class NewMessageComponent implements OnInit {
     this.newMessageService.newMessagePost(data.value, params.id)
       .subscribe(message => {
         this.message = message
-        this.router.navigate(['/single',params.id]);
+        this.router.navigate(['/user', 'profile', params.id]);
         console.log(message.id)
         console.log(message)
       });

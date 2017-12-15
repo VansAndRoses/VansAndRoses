@@ -4,6 +4,7 @@
 <p>{{ user.lastname }}</p>
 <p>{{ user.email }}</p>
 <p>{{ user.typeOfVan }}</p>
+  <button [routerLink]="['/new-message', user._id]">Send a message to {{user.username}}</button>
 
  <div class="" *ngFor="let trip of myTrips">
   <p>{{trip.title}}</p>
@@ -16,6 +17,10 @@
   <p>{{trip.average}}</p>
   <p>{{trip.quantityReviews}}</p>
   <p>{{trip.duration}}</p>
+  <img [src]='trip.image'/>
+  <button [routerLink]="['/single', trip._id]">View Details</button>
+
+
 
 </div>
 </div>

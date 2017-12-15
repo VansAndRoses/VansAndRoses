@@ -27,7 +27,7 @@ exports.createItineration = function(req, res, next) {
     placeToSleep:      req.body.placeToSleep,
     placeToEat:      req.body.placeToEat,
     washingPlace:    req.body.washingPlace,
-    image: `/uploads/${req.file.filename}`,
+    image: req.file.url,
   });
 
   console.log("Itineration created");

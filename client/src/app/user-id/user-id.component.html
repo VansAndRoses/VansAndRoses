@@ -1,12 +1,27 @@
 <div *ngIf="user">
-<h1>{{ user.username }}</h1>
-<p>{{ user.name }}</p>
-<p>{{ user.lastname }}</p>
-<p>{{ user.email }}</p>
-<p>{{ user.typeOfVan }}</p>
-  <button [routerLink]="['/new-message', user._id]">Send a message to {{user.username}}</button>
-
+  <div class="siimple-box siimple-box--teal center">
+    <h1>User</h1>
+  <div  *ngFor="let trip of myTrips">
+    <div class="siimple-box siimple-box--white center">
+<h1>{{ user.username }}´s profile</h1>
+<img src="../assets/vansandroseslogo-profile.png" id ="logo" alt="">
+<h2>{{ user.name }} {{ user.lastname }}</h2>
+<p>Email: {{ user.email }}</p>
+<p>Location: {{ user.location }}</p>
+<p>Type of Van: {{ user.typeOfVan }}</p>
+  <div [routerLink]="['/new-message', user._id]" class="siimple-btn siimple-btn--teal">Send a message to {{user.username}}</div>
+  <br>
+  </div>
+  <br>
+  <br>
+  </div>
+  </div>
+  <br>
+  <br>
+  <div class="siimple-box center">
+    <h1>Trips</h1>
  <div class="" *ngFor="let trip of myTrips">
+   <div class="siimple-box siimple-box--white center">
   <p>{{trip.title}}</p>
   <p>{{trip.category}}</p>
   <p>{{trip.description}}</p>
@@ -18,9 +33,12 @@
   <p>{{trip.quantityReviews}}</p>
   <p>{{trip.duration}}</p>
   <img [src]='trip.image'/>
-  <button [routerLink]="['/single', trip._id]">View Details</button>
-
-
-
+  <div [routerLink]="['/single', trip._id]" class="siimple-btn siimple-btn--teal">View Details</div>
+</div>
+<br>
+<br>
 </div>
 </div>
+<br>
+<br>
+<br>

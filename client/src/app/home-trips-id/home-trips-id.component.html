@@ -4,6 +4,7 @@
 <div *ngIf= "compTrip">
         <h1>{{compTrip.trip.title}}</h1>
         <h1>Rating: {{compTrip.trip.average}}</h1>
+        <p>({{compTrip.trip.quantityReviews}} votes)</p>
         <p>{{compTrip.trip.description}}</p>
         <p>Category: {{compTrip.trip.category}}</p>
         <p>Duration: {{compTrip.trip.duration}} days</p>

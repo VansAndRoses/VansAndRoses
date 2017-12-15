@@ -1,7 +1,16 @@
+<br>
+<br>
+<br>
+<div class="siimple-box siimple-box--white center">
 <h1>New Message</h1>
 <form (ngSubmit)="newMessagePost(myForm)" #myForm="ngForm">
   <label class="siimple-label">Your message: </label><br>
-  <textarea class="siimple-textarea siimple-textarea--fluid" name='msgText' [(ngModel)]="msgText" rows="5">
+  <textarea class="siimple-textarea siimple-textarea--fluid" name='text' [(ngModel)]="msgText" rows="5">
   </textarea>
-<button type="submit" class="siimple-btn siimple-btn--teal"> New message </button>
+  <br>
+  <br>
+<button type="submit" class="siimple-btn siimple-btn--yellow"> New message </button>
 </form>
+<br>
+<br>
+</div>

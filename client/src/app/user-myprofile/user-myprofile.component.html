@@ -24,7 +24,7 @@
         <br>
         <br>
         <br>
-      <div class="siimple-box center">
+      <div class="siimple-box siimple-box--teal center">
       <h1>My Trips</h1>
       <div  *ngFor="let trip of myTrips">
         <div class="siimple-box siimple-box--white center">
@@ -38,7 +38,9 @@
         <p>Start location: {{trip.locationOfStart}}</p>
         <p>End location: {{trip.locationOfEnd}}</p>
         <img [src]='trip.image'/>
-        <button [routerLink]="['/single', trip._id]">View Details</button>
+        <br>
+        <div [routerLink]="['/single', trip._id]" class="siimple-btn siimple-btn--teal">View Details</div>
+        <br>
       </div>
       <br>
       <br>

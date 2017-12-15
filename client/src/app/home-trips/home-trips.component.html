@@ -4,17 +4,17 @@
 <h1>Trips</h1>
 <div class="siimple-grid">
   <div class="siimple-grid-row">
-    <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col-sm--12">
+    <div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col-lg--12">
 <label class="siimple-label" for="things_name"> Search Category: </label>
-<select class="siimple-select" [(ngModel)]="categorySearch">
+<select class="siimple-select siimple-select--fluid" [(ngModel)]="categorySearch">
   <option *ngFor="let option of options"[value]="option">
        {{ option }}
      </option>
   </select>
 </div>
-<div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col-sm--12">
+<div class="siimple-grid-col siimple-grid-col--6 siimple-grid-col-lg--12">
 <label class="siimple-label" for="things_name"> Search Location: </label>
-  <select class="siimple-select" [(ngModel)]="locationSearch">
+  <select class="siimple-select siimple-select--fluid" [(ngModel)]="locationSearch">
     <option *ngFor="let option of options2"[value]="option">
          {{ option }}
        </option>
@@ -41,17 +41,22 @@
           [label]="m.label"></agm-marker>
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
+  <h1>Rating: {{e.average}}</h1>
+  <p>({{e.quantityReviews}} votes)</p>
   <h2>{{e.title}}</h2>
-  <h3>{{e.average}}</h3>
   <h4>Duration: {{e.duration}} days</h4>
+  <h4>Categoría: {{e.category}} </h4>
   <p>Description: {{e.description}}</p>
-  <p>Categoría: {{e.category}} </p>
   <p>Localización: {{e.location}} </p>
   <p>Localización de Salida: {{e.locationOfStart}}</p>
     <p>Localización de llegada: {{e.locationOfEnd}}</p>
 <img [src]='e.image' />
-<button [routerLink]="['/single', e._id]">View Details</button>
- <button [routerLink]="['/user', 'profile', e.creator._id]">Creador: {{e.creator.username}}</button>
+<br>
+<br>
+<div [routerLink]="['/single', e._id]" class="siimple-btn siimple-btn--teal">View Details</div>
+<br>
+<br>
+ <div [routerLink]="['/user', 'profile', e.creator._id]" class="siimple-btn siimple-btn--yellow">Creador: {{e.creator.username}}</div>
 </div>
 <br>
 <br>

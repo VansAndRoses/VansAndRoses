@@ -1,14 +1,16 @@
-<h1>
-New Review
-</h1>
+<br>
+<br>
+<br>
+<div class="siimple-box siimple-box--white center">
+<h1>New Review</h1>
 <form (ngSubmit)="newReviewPost(myForm)" #myForm="ngForm">
-  <p> Rating:
+  <label class="siimple-label">Rating:</label><br>
+    <input type="number" class="siimple-input siimple-input--fluid" name="rating" [(ngModel)]="rating" required />
+  <label class="siimple-label">Comment:</label><br>
+    <input type="text" class="siimple-input siimple-input--fluid" name="text" [(ngModel)]="text" required />
     <br>
-    <input type="number" name="rating" [(ngModel)]="rating" required />
-  </p>
-  <p> Comment:
     <br>
-    <input type="text" name="text" [(ngModel)]="text" required />
-  </p>
-<button type="submit"> New review </button>
+<button type="submit" class="siimple-btn siimple-btn--yellow"> New review </button>
 </form>
+<br><br>
+</div>

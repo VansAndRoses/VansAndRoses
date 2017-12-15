@@ -5,3 +5,9 @@ agm-map {
 h1 {
   text-align: center;
 }
+
+.center {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+};

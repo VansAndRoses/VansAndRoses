@@ -1,6 +1,5 @@
 
-<div *ngIf="!user">
-<h2>NO USER LOGGED IN</h2>
+<div *ngIf="!user" [routerLink]="['']">
 </div>
 
 <div *ngIf="user">
@@ -8,11 +7,12 @@
     <div class="siimple-grid-row">
       <div class="siimple-grid-col siimple-grid-col--12">
         <h1>My Profile</h1>
+        <img src="../assets/vansandroseslogo-profile.png" id ="logo" alt="">
         <h2>{{ user.name }} {{ user.lastname }}</h2>
-        <p>{{ user.username }}</p>
-        <p>{{ user.email }}</p>
-        <br>
-        <br>
+        <h3>{{ user.username }}</h3>
+        <p>Email: {{ user.email }}</p>
+        <p>Location: {{ user.location }}</p>
+        <p>Type of Van: {{ user.typeOfVan }}</p>
         <br>
         <button class="siimple-btn siimple-btn--teal" [routerLink]="['/home-trips']"> Find trips </button>
         <br>
@@ -20,7 +20,7 @@
         <button class="siimple-btn siimple-btn--yellow" [routerLink]="['/new-trips']"> Create trip </button>
         <br>
         <br>
-        <button (click)="auth.logout().subscribe()" class="siimple-btn siimple-btn--red"> Log out </button>
+        <button (click)="auth.logout().subscribe()" class="siimple-btn siimple-btn--red" [routerLink]="['']"> Log out </button>
         <br>
         <br>
         <br>

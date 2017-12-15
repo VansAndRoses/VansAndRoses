@@ -1,20 +1,26 @@
 
-<div *ngIf="!user">
-<h2>NO USER LOGGED IN</h2>
+<div *ngIf="!user" [routerLink]="['']">
+
 </div>
 
-<div *ngIf="user" class="siimple-navbar siimple-navbar--teal siimple-navbar--fluid">
-  <div class="siimple-layout">
-    <img src="assets/vansandroseslogo-large2.png" class="siimple-navbar-title center">
-  </div>
-</div>
-<div *ngIf="user" class="siimple-navbar center">
-  <div class="siimple-layout--center">
-    <a class="siimple-navbar-link" [routerLink]="['/user/myprofile']">User Profile</a>
-    <a class="siimple-navbar-link" [routerLink]="['/home-trips']">Trips</a>
-    <a class="siimple-navbar-link" [routerLink]="['/my-messages']">My messages</a>
-    <div (click)="auth.logout().subscribe()" class="siimple-btn siimple-btn--yellow" [routerLink]="['']">Logout</div>
-  </div>
-</div>
-
+<div *ngIf="user">
+<label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+        <ul id="menu" class="center">
+        <li><a [routerLink]="['/user/myprofile']">User profile</a></li>
+        <li><a [routerLink]="['/home-trips']">Trips</a></li>
+        <li><a [routerLink]="['/my-messages']">My messages</a></li>
+        <li><div (click)="auth.logout().subscribe()" class="siimple-btn siimple-btn--yellow" [routerLink]="['']">Logout</div></li>
+    </ul>
+    <div class="siimple-grid center">
+      <div class="siimple-grid-row">
+        <div class="siimple-grid-col siimple-grid-col--12">
+          <br>
+      <img src="../assets/vansandroseslogo-bueno2.png" id ="logoalt" alt="">
+      <br>
+      <br>
+    </div>
+    </div>
+    </div>
+    </div>
 <router-outlet></router-outlet>

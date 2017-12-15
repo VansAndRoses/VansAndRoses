@@ -55,8 +55,8 @@
   <label class="siimple-label">Photo:</label><br>
   <input type="file" class="siimple-input siimple-input--fluid" name="file"  id="file" ng2FileSelect [uploader]="uploader" />
   <!-- <input type="file" name="file"  id="file" ng2FileSelect [uploader]="uploader" /> -->
-  <label> Options </label>
-    <select name="options" [(ngModel)]="options" >
+  <label class="siimple-label"> Options </label>
+    <select name="options" class="siimple-select siimple-select--fluid" [(ngModel)]="options" >
       <option value="animals">Animals</option>
       <option value="kids">Kids</option>
       </select>
@@ -74,6 +74,7 @@
 <label for="kids"></label>
 </div>
 <br> -->
+  <br>
   <br>
   <button type="submit" class="siimple-btn siimple-btn--teal"> New trip </button>
   <br>
